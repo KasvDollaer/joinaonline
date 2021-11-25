@@ -1,0 +1,126 @@
+{% extends "ecommerce/base.html" %}
+{% load humanize %}
+
+{% block content %}		
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				{% if request.GET.cart %}
+					<div class="alert alert-success alert-dismissable">
+						{% if request.GET.cart == '0' %}
+							Item successfully removed from cart
+						{% else %}
+							Item successfully added to cart
+						{% endif %}
+					</div>
+				{% endif %}
+			</div>
+			
+			<div class="col-md-8">
+				<h3 class="mb-3">{{ product.name }}</h3>
+				
+				<input type = "hidden" class = "item-images-json" value = '{{ images }}' />
+				<div class = "imageviewer">
+					<div class = "image-container"></div>
+					<i class="fas fa-arrow-circle-left prev"></i>
+					<i class="fas fa-arrow-circle-right next"></i>
+					
+					<div class = "footer-info">
+						<span class = "current"></span>/<span class="total"></span>
+					</div>
+				</div>
+				
+				<div class="card">
+					<div class="card-header">Details</div>
+					<div class="card-body">
+						{{ product.content|safe }}	Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum. Lorem ipsum dolor sit amet
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header">
+						Details
+					</div>
+					<div class="card-body">
+						<h2 class="text-danger">{{ currency }} {{ product.price|intcomma }}</h2>
+						
+						<p>{{ product.excerpt|linebreaks }}</p>
+						
+						<hr />
+						
+						<p><strong>Date Posted</strong>: {{ product.date }}</p>
+						<p><strong>On Stock</strong>: {{ product.quantity }}</p>
+						
+						<hr />
+						<form method="post" action="{% url 'ecommerce:cart' %}">
+							{% if in_cart %}
+								<input type="submit" value="Remove from Cart" class="btn btn-block btn-danger" />
+							{% else %}
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">Qty</div>
+									</div>
+									<input type="number" id="quantity" min="1" max="{{ product.quantity }}" class="form-control" name="quantity" value="1" />
+									<div class="input-group-append">
+										<button type="submit" class="btn btn-primary">Add To Cart</button>
+									</div>
+								</div>
+							{% endif %}
+							<input type="hidden" name="redirect" value="{% url 'ecommerce:single_product' product.id %}?cart={{ in_cart|yesno:'0,1' }}" />
+							<input type="hidden" name="action" value="{{ in_cart|yesno:'delete,add' }}" />
+							<input type="hidden" name="item_id" value="{{ product.id }}" />
+					</div>
+				</div>
+				
+				<div class="card">
+					<div class="card-header">
+						Seller
+					</div>
+					<div class="card-body">
+						<p>
+							<h3>{{ author.first_name }} {{ author.last_name }} </h3>
+							<strong>Email:</strong> <a href="mailto:{{ author.email }}">{{ author.email }}</a><br />
+							<strong>Phone:</strong> <a href="tel:{{ author.member.phone_number }}">{{ author.member.phone_number }}</a>
+						</p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="py-5">
+		<div class="container">
+			<h2 class="text-center">Featured Products</h2>
+			<hr>
+			<div class="row">
+				{% for item in products %}
+					<div class='col-md-3 col-sm-6 mb-3'>
+						<div class='card'>
+							<div class='card-body p-0'>
+								<a href="{% url 'ecommerce:single_product' item.id %}">
+									<img src='{{ item.featured_image }}' width='100%' class='img-responsive'>
+								</a>
+								<div class='list-group list-group-flush'>
+									<div class='list-group-item border-top-0 py-2'>
+										<i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>Price</p>
+										<h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
+									</div>
+									<div class='list-group-item py-2'>
+										<i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>On Stock</p>
+										<h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
+									</div>
+								</div>
+							</div> 
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
