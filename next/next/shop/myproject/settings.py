@@ -22,6 +22,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'ecommerce',
+    'payment',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -97,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Harare'
 
 USE_I18N = True
 
@@ -110,6 +111,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 STATIC_URL = '/static/'
 
+# Paynow.co.zw API Settings
+# Change these setting to the ones generated in your user account on http://paynow.co.zw/
+PAYNOW_INTEGRATION_ID = ''
+PAYNOW_INTEGRATION_KEY = ''
+
+
 # Location of uploaded image files on the server.
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    

@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-	url(r'ecommerce/', include('ecommerce.urls')), # Include ecommerce app views. 
+	url(r'ecommerce/', include('ecommerce.urls')), # Include ecommerce app views.
+    url(r'paynow/', include('payment.urls')), 
     url(r'^admin/', admin.site.urls),
 ]

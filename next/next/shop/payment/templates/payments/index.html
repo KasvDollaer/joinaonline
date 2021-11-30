@@ -1,0 +1,103 @@
+{% extends "payments/base.html" %}
+
+{% block title %}Paynow Payments{% endblock %}
+
+{% block content %}
+<div class="row">
+<div class="col-sm-12">
+<h1 class="page-header">Paynow Payments</h1>
+<a href="{% url 'payment:paynow_payment' %}"
+    class="btn btn-warning btn-lg" role="button">Make a new Payment</a>
+
+
+<h3 >Today's Ecocash and Telecash Payments</h3>
+</div>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+
+
+
+<div class="col-sm-6">
+<h3>Not Yet Paid</h3>
+
+   {% for upayment in unconfirmed %}
+
+
+   <div class="panel {% if upayment.paid == True %}panel-primary
+                     {% else %}panel-danger{% endif %}">
+  <div class="panel-heading">
+    {{ upayment.cellphone }} -
+     Amount: ${{ upayment.amount }} - {{ upayment.status|upper }}
+  </div>
+  <div class="panel-body">
+
+      Details: <strong>{{ upayment.details }}</strong>
+    <br>
+    Cellphone: {{ upayment.cellphone }}
+    <br>
+    Email: {{ upayment.email }}
+    <br>
+    Time: {{ upayment.created|date:"D d M Y" }} {{ upayment.created|time:"H:i:s" }}
+    <br>
+    Reference: {{ upayment.reference }}
+     <br>
+    Paynow Reference: {{ upayment.paynow_reference }}
+    <br>
+    Paynow Status: {{ upayment.status }}
+
+    {% if upayment.paid != True %}
+    <br>
+    <a href="{% url 'payment:paynow_return' upayment.reference %}"
+    class="btn btn-primary" role="button">Check Payment Status</a>
+    {% endif %}
+    </div>
+    </div>
+{% empty %}
+   There are no unconfirmed payments
+{% endfor %}
+
+</div>
+
+
+<div class="col-sm-6">
+<h3>Paid</h3>
+
+ {% if confirmed %}
+
+   {% for payment in confirmed %}
+   <div class="panel {% if payment.paid == True %}panel-primary
+                     {% else %}panel-danger{% endif %}">
+  <div class="panel-heading">
+     {{ payment.cellphone }} -
+     Amount: ${{ payment.amount }} - {{ payment.status|upper }}
+  </div>
+  <div class="panel-body">
+    Ref:Acc {{ payment.additionalinfo }}
+    <br>
+    Time {{ payment.created|date:"D d M Y" }} {{ payment.created|time:"H:i:s" }}
+    <br>
+    Reference: {{ payment.reference }}
+     <br>
+    Paynow Reference: {{ payment.paynow_reference }}
+    {% if payment.paid != True %}
+    <a href="{% url 'payment:paynow_return' payment.reference %}">Check Payment Status</a>
+    <br>
+    {{ payment.pollurl }}
+    {% endif %}
+
+  </div>
+</div>
+
+  {% endfor %}
+  {% else %}
+    There are no payments
+  {% endif %}
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}
