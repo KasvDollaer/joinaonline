@@ -1,12 +1,28 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=30)
     about = models.TextField()
-    
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=200, db_index=True)
+    slug = models.SlugField(max_length=200, unique=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     content = models.TextField()
     excerpt = models.TextField()
@@ -16,6 +32,8 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField()
     author = models.PositiveIntegerField()
     featured_image = models.CharField(max_length=300)
+
+
 class Image(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     image = models.ImageField()
