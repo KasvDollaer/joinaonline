@@ -9,7 +9,8 @@ class Member(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=200, db_index=True)
+    Category_Choices = [('Electronics and Technology', 'Electronics and Technology'),("Men's Clothing","Men's Clothing"),('Kids Corner','Kids Corner'), ('Garden and Machinery','Garden and Machinery'), ('Home and Kitchen', "home and Kitchen"), ('Digital Goods', 'Digital Goods') ]
+    name = models.CharField(max_length=200, db_index=True,choices=Category_Choices)
     slug = models.SlugField(max_length=200, unique=True)
 
     class Meta:

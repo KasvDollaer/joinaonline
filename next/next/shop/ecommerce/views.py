@@ -310,7 +310,7 @@ def user_product_create(request):
 		if form.is_valid():	
 			price = re.compile(r'[^\d.]+')
 			product = Product.objects.create(
-				category = form.cleaned_data['category'],
+				# category = form.cleaned_data['category'],
 				name = form.cleaned_data['name'],
 				content = form.cleaned_data['content'],
 				excerpt = form.cleaned_data['excerpt'],
