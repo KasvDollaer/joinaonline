@@ -13,7 +13,7 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.template.defaulttags import register
 from .apps import EcommerceConfig
-from .models import Member, Product, Image, User
+from .models import Category, Member, Product, Image, User
 from .forms import *
 from .helpers import Helpers
 from time import gmtime, strftime
@@ -310,6 +310,7 @@ def user_product_create(request):
 		if form.is_valid():	
 			price = re.compile(r'[^\d.]+')
 			product = Product.objects.create(
+				category = form.cleaned_data['category'],
 				name = form.cleaned_data['name'],
 				content = form.cleaned_data['content'],
 				excerpt = form.cleaned_data['excerpt'],
