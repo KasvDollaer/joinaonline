@@ -14,15 +14,8 @@ urlpatterns = [
 	url(r'^cart/$', views.cart, name='cart'),
 	url(r'^checkout/$', views.checkout, name='checkout'),
 
-	url(r'^categories/', include([
-		url(r'^digital-goods/$', views.categories_digital, name='digital-goods'),
-		url(r'^mens-clothing/$', views.categories_mensClothing, name='mens-clothing'),
-		url(r'^kids-corner/$', views.categories_kidsCorner, name='kids-corner'),
-		url(r'^garden-machinery/$', views.categories_gardenMachinery, name='garden-machinery'),
-		url(r'^home-kitchen/$', views.categories_homeKitchen, name='home-kitchen'),
-		url(r'^electronics/$', views.categories_electronics, name='electronics')
-	])),
 	
+
 	url(r'^user/', include([
         url(r'^login/$', views.user_login, name='user_login'),
 		url(r'^register/$', views.user_register, name='user_register'),
