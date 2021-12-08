@@ -5876,12 +5876,9 @@
                             <nav class="nav-home-aside">
                                 <h5 class="title-category">CATEGORIES <i class="d-md-none icon fa fa-chevron-down"></i></h5>
                                 <ul class="menu-category">
-                                    <li><a href="electronics">Electronics &amp; Technology</a></li>
-                                    <li><a href="men-clothing">Men's Clothing</a></li>
-                                    <li><a href="kids-corner">Kid's Corner </a></li>
-                                    <li><a href="garden-machinery">Garden &amp; Machinery</a></li>
-                                    <li><a href="home-kitchen">Home and kitchen</a></li>
-                                    <li><a href="digital-goods">Digital goods</a></li>
+                                    {% for category in categories %}
+                                    	<li><a href="{% url 'ecommerce:get_category' category.category_slug %}">{{ category.name}}</a></li>
+                                    {% endfor %}  
                                     <li class="has-submenu"><a href="#">More items</a>
                                         <ul class="submenu">
                                             <li><a href="#">Kitchen Appliances</a></li>
