@@ -13,20 +13,22 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.template.defaulttags import register
 from .apps import EcommerceConfig
-from .models import Member, Product, Image, User
+from .models import Member, Product, Image, User, Sub_Category, Category
 from .forms import *
 from .helpers import Helpers
 from time import gmtime, strftime
+from django.http import HttpResponse
+import json
 
 def index(request):
+	categories = Category.objects.all()
 	preview_products = Product.objects.all().order_by('-id')[:12]
-	
-	return render(request, Helpers.get_url('index.html'), {'products': preview_products, 'currency': EcommerceConfig.currency})
+	return render(request, Helpers.get_url('index.html'), {'products': preview_products,'categories':categories, 'currency': EcommerceConfig.currency})
 
 def single_product(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
 	author = get_object_or_404(User, pk=product.author)
-	product_images = product.image_set.all()
+	product_images = product.images.all()
 	images = []
 	cart_items = request.session
 	
@@ -631,3 +633,20 @@ def get_cart_item(dictionary, key):
 @register.simple_tag()
 def multiply(qty, unit_price, *args, **kwargs):
     return qty * unit_price
+#Get category
+def get_category(request, category_slug):
+	category = Category.objects.get(category_slug=category_slug)
+	sub_categories = Sub_Category.objects.filter(category = category)
+	category_products = Product.objects.filter(category = category )
+	latest_product = Product.objects.latest('date')
+	context={
+		'category':category,
+		'sub_categories': sub_categories,
+		'category_products': category_products,
+		'latest_product':latest_product,
+	}
+	for cat in category_products:
+		print(cat.name)
+
+
+	return render(request, Helpers.get_url('product/get_category.html'), context)
