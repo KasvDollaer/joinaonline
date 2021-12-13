@@ -13,7 +13,9 @@ urlpatterns = [
 	url(r'^contact/$', views.contact, name='contact'),
 	url(r'^cart/$', views.cart, name='cart'),
 	url(r'^checkout/$', views.checkout, name='checkout'),
+	url(r'^get_category/(?P<category_slug>\D+)/$', views.get_category, name='get_category'),
 	
+
 	url(r'^user/', include([
         url(r'^login/$', views.user_login, name='user_login'),
 		url(r'^register/$', views.user_register, name='user_register'),

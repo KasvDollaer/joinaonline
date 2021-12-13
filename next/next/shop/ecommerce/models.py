@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 
 class Member(models.Model):
@@ -9,9 +10,9 @@ class Member(models.Model):
 
 
 class Category(models.Model):
-    Category_Choices = [('Electronics and Technology', 'Electronics and Technology'),("Men's Clothing","Men's Clothing"),('Kids Corner','Kids Corner'), ('Garden and Machinery','Garden and Machinery'), ('Home and Kitchen', "home and Kitchen"), ('Digital Goods', 'Digital Goods') ]
-    name = models.CharField(max_length=200, db_index=True,choices=Category_Choices)
-    slug = models.SlugField(max_length=200, unique=True)
+    name = models.CharField(max_length=200, db_index=True)
+    category_slug = models.SlugField(max_length=200, null=True, blank=True)
+    category_image = models.ImageField(upload_to = 'category_banner/')
 
     class Meta:
         ordering = ('name',)
@@ -21,9 +22,25 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def save(self,*args,**kwargs):
+        self.category_slug = slugify(self.name)
+        super(Category, self).save(*args,**kwargs)
+
+class Sub_Category(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="sub_categories")
+    subcategory_slug = models.SlugField(max_length=250, null=True, blank=True)
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+    def save(self,*args,**kwargs):
+        self.subcategory_slug = slugify(self.name)
+        super(Sub_Category, self).save(*args,**kwargs)
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE, null=True)
+    sub_category = models.ForeignKey(Sub_Category, related_name='products', on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=200)
     content = models.TextField()
     excerpt = models.TextField()
@@ -34,7 +51,12 @@ class Product(models.Model):
     author = models.PositiveIntegerField()
     featured_image = models.CharField(max_length=300)
 
+    def __str__(self):
+        return self.name
+    
+    
+
 
 class Image(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    image = models.ImageField()
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='products/' ,blank=True, null=True)
