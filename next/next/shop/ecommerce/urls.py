@@ -13,7 +13,11 @@ urlpatterns = [
 	url(r'^contact/$', views.contact, name='contact'),
 	url(r'^cart/$', views.cart, name='cart'),
 	url(r'^checkout/$', views.checkout, name='checkout'),
+<<<<<<< HEAD
 
+=======
+	url(r'^get_category/(?P<category_slug>\D+)/$', views.get_category, name='get_category'),
+>>>>>>> origin/main
 	
 
 	url(r'^user/', include([
