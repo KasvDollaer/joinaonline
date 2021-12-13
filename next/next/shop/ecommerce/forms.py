@@ -22,7 +22,7 @@ class AccountForm(forms.Form):
 	about_me = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'id': 'ck-editor-area'}), required=False)
 	
 class CreateProductForm(forms.Form):
-	category = forms.CharField(widget=forms.Select(choices=Category.Category_Choices, attrs={'class':'form-control'})	)
+	# category = forms.CharField(widget=forms.Select(choices=Category.Category_Choices, attrs={'class':'form-control'})	)
 	name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
 	content = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'id': 'ck-editor-area'}))
 	excerpt = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'rows': '7'}), required=False)
