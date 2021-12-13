@@ -633,8 +633,7 @@ def get_cart_item(dictionary, key):
 @register.simple_tag()
 def multiply(qty, unit_price, *args, **kwargs):
     return qty * unit_price
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 def categories_electronics(request):
 	return render(request, Helpers.get_url('categories/electronics.html'))
@@ -654,9 +653,7 @@ def categories_homeKitchen(request):
 
 def categories_digital(request):
 	return render(request, Helpers.get_url('categories/digital-goods.html'))
-=======
-=======
->>>>>>> origin/main
+
 #Get category
 def get_category(request, category_slug):
 	category = Category.objects.get(category_slug=category_slug)
@@ -673,9 +670,5 @@ def get_category(request, category_slug):
 		print(cat.name)
 
 
-<<<<<<< HEAD
+
 	return render(request, Helpers.get_url('product/get_category.html'), context)
->>>>>>> 0001
-=======
-	return render(request, Helpers.get_url('product/get_category.html'), context)
->>>>>>> origin/main
