@@ -300,6 +300,7 @@ def user_products(request):
 	
 def user_product_create(request):
 	err_succ = {'status': 0, 'message': 'An unknown error occured'}
+	p_category = Category.objects.all()
 	
 	# Redirect if not logged-in
 	if request.user.is_authenticated == False:
@@ -313,6 +314,7 @@ def user_product_create(request):
 			price = re.compile(r'[^\d.]+')
 			product = Product.objects.create(
 				# category = form.cleaned_data['category'],
+				category = Category.objects.get(id = request.POST['category']),
 				name = form.cleaned_data['name'],
 				content = form.cleaned_data['content'],
 				excerpt = form.cleaned_data['excerpt'],
@@ -328,7 +330,7 @@ def user_product_create(request):
 			
 		return JsonResponse(err_succ)
 	else:	
-		return render(request, Helpers.get_url('product/create.html'), {'form': CreateProductForm()})
+		return render(request, Helpers.get_url('product/create.html'), {'form': CreateProductForm(), 'p_category': p_category})
 	
 	
 def user_product_update(request, product_id):
