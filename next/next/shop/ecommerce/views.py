@@ -143,11 +143,49 @@ def products(request):
 def about(request):
 	return render(request, Helpers.get_url('about.html'))
 	
+def moneyrefund(request):
+	return render(request, Helpers.get_url('comingsoon.html'))
+
+def career(request):
+	return render(request, Helpers.get_url('comingsoon.html'))
+
+def shippinginfo(request):
+	return render(request, Helpers.get_url('comingsoon.html'))
+
+def opendispute(request):
+	return render(request, Helpers.get_url('comingsoon.html'))
+
+def rulesandterms(request):
+	return render(request, Helpers.get_url('comingsoon.html'))
+
+def findastore(request):
+	return render(request, Helpers.get_url('contact.html'))
+
+def Samsung(request):
+	return render(request, Helpers.get_url('comingsoon.html'))
+
+def Sony(request):
+	return render(request, Helpers.get_url('comingsoon.html'))
+
+def LG(request):
+	return render(request, Helpers.get_url('comingsoon.htm;'))
+
+def Philips(request):
+	return render(request, Helpers.get_url('comingsoon.html'))
+	
+	
+	
+	
+	
+	
+	
+	
 def contact(request):
 	return render(request, Helpers.get_url('contact.html'))
 
 def paymentDetails(request):
 	return render(request, Helpers.get_url('payment-details.html'))
+	
 	
 def user_login(request):
 	# Redirect if already logged-in

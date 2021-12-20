@@ -1,402 +1,433 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>JOINA CITY ONLINE</title>
-	
-	<!-- Required meta tags -->
+    <title>JOINA CITY ONLINE</title>
+
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel="stylesheet" href="{% static 'ecommerce/lib/imageviewer/imageviewer.css' %}">
-	<link rel="stylesheet" href="{% static 'ecommerce/lib/lobibox/lobibox.min.css' %}">
-	<link rel="stylesheet" href="{% static 'ecommerce/css/styles.css' %}" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'ecommerce/lib/imageviewer/imageviewer.css' %}">
+    <link rel="stylesheet" href="{% static 'ecommerce/lib/lobibox/lobibox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'ecommerce/css/styles.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
 
 
 </head>
+
 <body class="override">
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-		<div class="">
-			<a href="/joina-online/" class="brand-wrap">
-				<img class="logo" src="{% static 'ecommerce/img/images.jpg' %}" width='50' height="50">
-			</a> <!-- brand-wrap.// -->
-		</div>
-		<a class="navbar-brand" href="/ecommerce/">JOINA CITY </a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3"> fffffd
+        <div class="">
+            <a href="/joina-online/" class="brand-wrap">
+                <img class="logo" src="{% static 'ecommerce/img/images.jpg' %}" width='50' height="50">
+            </a>
+            <!-- brand-wrap.// -->
+        </div>
+        <a class="navbar-brand" href="/ecommerce/">JOINA CITY </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link" href="/ecommerce/products">Products</a></li>
-				<li class="nav-item"><a class="nav-link" href="/ecommerce/about">About</a></li>
-				<li class="nav-item"><a class="nav-link" href="/ecommerce/contact">Contact</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Food</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Electronics</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">vendors</a></li>
-				<li class="nav-item">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="/ecommerce/products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ecommerce/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ecommerce/contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Food</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Electronics</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">vendors</a></li>
+                <li class="nav-item">
 
-				<div class="col-md-12">
-					<form action="#" class="search-header">
-						<div class="input-group w-100">
-							<select class="custom-select border-right" name="category_name">
+                    <div class="col-md-12">
+                        <form action="#" class="search-header">
+                            <div class="input-group w-100">
+                                <select class="custom-select border-right" name="category_name">
 									<option value="">	 type</option><option value="codex">Special</option>
 									<option value="comments">Only best</option>
 									<option value="content">Latest</option>
 							</select>
-							<input type="text" class="form-control" placeholder="Search">
-							
-							<div class="input-group-append">
-							  <button class="btn btn-success" type="submit">
+                                <input type="text" class="form-control" placeholder="Search">
+
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" type="submit">
 								<i class="fa fa-search"></i> Search
 							  </button>
-							</div>
-						</div>
-					</form> <!-- search-wrap .end// -->
-				</div>
-			</li>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- search-wrap .end// -->
+                    </div>
+                </li>
 
-			
-			
-			
-			<ul class="navbar-nav">
-				{% if user.is_authenticated %}
-					<li class="nav-item"><a class="nav-link" href="/ecommerce/cart">Cart</a></li>
-				
-					<li class="nav-item dropdown">	
-									</a>
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dashboard</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="/ecommerce/user/account">Account</a>
-							<a class="dropdown-item" href="/ecommerce/user/product/create">Create Product</a>
-							<a class="dropdown-item" href="/ecommerce/user/products">Manage Products</a>
-						</div>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="/ecommerce/user/logout">Logout</a></li>
-				{% else %}
-					<li class="nav-item"><a class="nav-link" href="/ecommerce/cart">Cart</a></li>
-					<li class="nav-item"><a class="nav-link" href="/ecommerce/user/register">Register</a></li>
-					<li class="nav-item"><a class="nav-link" href="/ecommerce/user/login">Login</a></li>
-				{% endif %}
-			</ul>
-		</div>
-		
-	</nav>
-	
-	
-	{% block content %}{% endblock %}	
 
-	<footer class="section-footer border-top">
-		<div class="com-log col-md-3 logo-tab">
-				<div>
-					<h1>Joina-Online</h1>
-				</div>
-				<br>
-				<div>
-					<a href="" id="btn2"><i class="fa fa-cloud-download"></i> Download Brochure</a>
-				</div>
-	   </div>
-		<br>
-		<div class="container">
-			<section class="footer-top padding-y">
-				<div class="row">
-					<aside class="col-md col-6">
-						<h3 class="title">Brands</h3>
-						<ul class="list-unstyled">
-							<li> <a href="#">Samsung</a></li>
-							<li> <a href="#">Sony</a></li>
-							<li> <a href="#">LG</a></li>
-							<li> <a href="#">Philips</a></li>
-						</ul>
-					</aside>
-					<aside class="col-md col-6">
-						<h3 class="title">Company</h3>
-						<ul class="list-unstyled">
-							<li> <a href="#">About us</a></li>
-							<li> <a href="#">Career</a></li>
-							<li> <a href="#">Find a store</a></li>
-							<li> <a href="#">Rules and terms</a></li>
-							<li> <a href="#">Sitemap</a></li>
-						</ul>
-					</aside>
-					<aside class="col-md col-6">
-						<h3 class="title">Help</h3>
-						<ul class="list-unstyled">
-							<li> <a href="#">Contact us</a></li>
-							<li> <a href="#">Money refund</a></li>
-							<li> <a href="#">Order status</a></li>
-							<li> <a href="#">Shipping info</a></li>
-							<li> <a href="#">Open dispute</a></li>
-						</ul>
-					</aside>
-					<aside class="col-md col-6">
-						<h3 class="title">Account</h3>
-						<ul class="list-unstyled">
-							<li> <a href="#"> User Login </a></li>
-							<li> <a href="#"> User register </a></li>
-							<li> <a href="#"> Account Setting </a></li>
-							<li> <a href="#"> My Orders </a></li>
-						</ul>
-					</aside>
-					<aside class="col-md">
-						<h3 class="title">Social</h3>
-						<ul class="list-unstyled">
-							<li><a href="#"> <i class="fa fa-facebook"></i> Facebook </a></li>
-							<li><a href="#"> <i class="fa fa-twitter"></i> Twitter </a></li>
-							<li><a href="#"> <i class="fa fa-instagram"></i> Instagram </a></li>
-							<li><a href="#"> <i class="fa fa-youtube"></i> Youtube </a></li>
-						</ul>
-					</aside>
-				</div> <!-- row.// -->
-			</section>	<!-- footer-top.// -->
-	
-			<section class="footer-bottom border-top row">
-				<div class="col-md-2">
-					<p class="text-muted"> © 2021 Cicosy</p>
-				</div>
-				<div class="col-md-8 text-md-center">
-					<span class="px-2">info@cicosy.com</span>
-					<span class="px-2"></span>
-					<span class="px-2">Cnr Julius Nyerere &amp; Jason Moyo</span>
-									<span class="px-2">| Cicosy E-Business </span>
-									<span class="px-2">| Cicosy E-Commerce </span>
-									<span class="px-2">| Cicosy System </span>
-									<span class="px-2">| Cicosy Logistics </span>
-									<span class="px-2">| Cicosy Institute </span>
-									<span class="px-2">| Cicosy Media </span>
-				</div>
-				<div class="col-md-2 text-md-right text-muted">
-					<i class="fa fa-cc-visa"></i>
-					<i class="fa fa-lg fa-cc-paypal"></i>
-					<i class="fa fa-lg fa-cc-mastercard"></i>
-				</div>
-			</section>
-		</div><!-- //container -->
-	</footer>
-	
-	<script type="text/javascript">
-		var module_path = '/ecommerce/'
-	</script>
-	<!-- Optional JavaScript -->
+
+
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="/ecommerce/cart">Cart</a></li>
+
+                    <li class="nav-item dropdown">
+                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dashboard</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/ecommerce/user/account">Account</a>
+                            <a class="dropdown-item" href="/ecommerce/user/product/create">Create Product</a>
+                            <a class="dropdown-item" href="/ecommerce/user/products">Manage Products</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/ecommerce/user/logout">Logout</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="/ecommerce/cart">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ecommerce/user/register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ecommerce/user/login">Login</a></li>
+                    {% endif %}
+                </ul>
+        </div>
+
+    </nav>
+
+
+    {% block content %}{% endblock %}
+
+    <footer class="section-footer border-top">
+        <div class="com-log col-md-3 logo-tab">
+            <div>
+                <h1>Joina-Online</h1>
+            </div>
+            <br>
+            <div>
+                <a href="" id="btn2"><i class="fa fa-cloud-download"></i> Download Brochure</a>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <section class="footer-top padding-y">
+                <div class="row">
+                    <aside class="col-md col-6">
+                        <h3 class="title">Brands</h3>
+                        <ul class="list-unstyled">
+                            <li> <a href="{% url 'ecommerce:comingsoon' %}">Samsung</a></li>
+                            <li> <a href="{% url 'ecommerce:comingsoon' %}">Sony</a></li>
+                            <li> <a href="{% url 'ecommerce:comingsoon' %}">LG</a></li>
+                            <li> <a href="{% url 'ecommerce:comingsoon' %}">Philips</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md col-6">
+                        <h3 class="title">Company</h3>
+                        <ul class="list-unstyled">
+                            <li> <a href="/ecommerce/about">About us</a></li>
+                            <li> <a href="{% url 'ecommerce:comingsoon' %}">Career</a></li>
+                            <li> <a href="{% url 'ecommerce:contact'%}">Find a store</a></li>
+                            <li> <a href="{% url 'ecommerce:about' %}">Rules and terms</a></li>
+                            <li> <a href="https://maps.google.com/maps/dir//Joina+City+Corner+Jason+Moyo+Ave+%26+Julius+Nyerere+Way+Harare/@-17.8318344,31.047353,13z/data=!4m5!4m4!1m0!1m2!1m1!1s0x1931a4e50c894921:0xe01ec669a775682e">Sitemap</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md col-6">
+                        <h3 class="title">Help</h3>
+                        <ul class="list-unstyled">
+                            <li> <a href="/ecommerce/contact">Contact us</a></li>
+                            <li> <a href="/ecommerce/comingsoon">Money refund</a></li>
+                            <li> <a href="/ecommerce/about">Order status</a></li>
+                            <li> <a href="/ecommerce/about">Shipping info</a></li>
+                            <li> <a href="/ecommerce/about">Open dispute</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md col-6">
+                        <h3 class="title">Account</h3>
+                        <ul class="list-unstyled">
+                            <li> <a href="/ecommerce/about"> User Login </a></li>
+                            <li> <a href="/ecommerce/about"> User register </a></li>
+                            <li> <a href="/ecommerce/about"> Account Setting </a></li>
+                            <li> <a href="/ecommerce/about"> My Orders </a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-md">
+                        <h3 class="title">Social</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#"> <i class="fa fa-facebook"></i> Facebook </a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa fa-twitter"></i> Twitter </a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa fa-instagram"></i> Instagram </a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa fa-youtube"></i> Youtube </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+                <!-- row.// -->
+            </section>
+            <!-- footer-top.// -->
+
+            <section class="footer-bottom border-top row">
+                <div class="col-md-2">
+                    <p class="text-muted"> © 2021 Cicosy</p>
+                </div>
+                <div class="col-md-8 text-md-center">
+                    <span class="px-2">info@cicosy.com</span>
+                    <span class="px-2"></span>
+                    <span class="px-2">Cnr Julius Nyerere &amp; Jason Moyo</span>
+                    <span class="px-2">| Cicosy E-Business </span>
+                    <span class="px-2">| Cicosy E-Commerce </span>
+                    <span class="px-2">| Cicosy System </span>
+                    <span class="px-2">| Cicosy Logistics </span>
+                    <span class="px-2">| Cicosy Institute </span>
+                    <span class="px-2">| Cicosy Media </span>
+                </div>
+                <div class="col-md-2 text-md-right text-muted">
+                    <i class="fa fa-cc-visa"></i>
+                    <i class="fa fa-lg fa-cc-paypal"></i>
+                    <i class="fa fa-lg fa-cc-mastercard"></i>
+                </div>
+            </section>
+        </div>
+        <!-- //container -->
+    </footer>
+
+    <script type="text/javascript">
+        var module_path = '/ecommerce/'
+    </script>
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-	<script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="{% static 'ecommerce/lib/imageviewer/imageviewer.min.js' %}"></script>
-	<script src="{% static 'ecommerce/lib/lobibox/lobibox.min.js' %}"></script>
-	<script src="{% static 'ecommerce/js/jquery.form.js' %}"></script>
-	<script src="{% static 'ecommerce/js/global.js' %}"></script>
-	<script src="{% static 'ecommerce/js/app.js' %}"></script>
-	<script>
-		$('.main-carousel').owlCarousel({
-			loop: true,
-			margin: 0,
-			nav: true,
-			dots: false,
-			autoplayHoverPause: false,
-			autoplay: 5000,
-			smartSpeed: 700,
-			navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
-			responsive: {
-				0: {
-					items: 1
-				},
-				600: {
-					items: 1
-				},
-				760: {
-					items: 1,
-					nav: false
-				},
-				1024: {
-					items: 1
-				},
-				1100: {
-					items: 1
-				}
-			}
-		});
-	</script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-	<script>
-		$(document).ready(function () {
-			$("#testimonial-slider").owlCarousel({
-				items: 3,
-				itemsDesktop: [1000, 3],
-				itemsDesktopSmall: [980, 2],
-				itemsTablet: [768, 2],
-				itemsMobile: [650, 1],
-				pagination: true,
-				navigation: false,
-				slideSpeed: 1000,
-				autoPlay: true
-			});
-		});
-	</script>
-	<style>
-		footer {
-		 background: rgb(4, 4, 39);
-		 color: #fcfcfc;
-		 line-height: 1.8;
-		 overflow: hidden;
-		 margin-bottom:0;
-		 padding:0;
-	 } 
-	 
-	 .grid-g a {
-		 color: #fdfdfd;
-		 font-size: 13px;
-	 }
-	 .grid-g h2 {
-		 font-size: 25px;
-	 }
-	 .grid-g ul li{
-		 text-decoration: none;
-		 list-style: none;
-	 }
-	 .grid-g h2{
-		 font-family: Calibri;
-		 font-weight:600;
-		 margin-bottom: 10px;
-	 }
-	 .grid-g {
-		 display: grid;
-		 display:table-header-group;
-		 font-family: Calibri;
-		 margin-top: 40px;
-		 text-align: left;
-		 margin-left: 90px;
-		 margin-right: 10px;
-		 margin-bottom: 50px;
-	 }
-	 .padding-left{
-		 margin-left:120px;
-		 margin-top:px;
-	 }
-	 .about-a{
-		 
-		 line-height: 1.3;
-		 margin-left: 20px
-	 }
-	 .about-a h2{
-		 font-size:22px;
-		 font-weight:600;
-	 }
-	 .about-a p{
-		 font-size: 14px;
-		 line-height: 1.2;
-	 }
-	 
-	 .grid-g button {
-		 border: none;
-		 color: #fefefe;
-		 border-radius: 25px;
-		 height: 40px;
-		 padding: 7px 4px;
-		 width: 85px;
-		 font-weight: 100;
-		 background: rgba(5, 99, 99, 0.884);
-		 cursor: pointer;
-	 }
-	 .footer-bottom p {
-		 height: 40px;
-		 margin-top: 70px;
-		 text-align: center;
-		 color: #ffffff;
-		 padding: 8px 15px;
-	 }
-	 .logo-tab h1{
-		 font-family: Calibri;
-		 font-weight:800;
-		 margin-bottom:10px;
-		 
-	 }
-	 #btn2{
-		 box-sizing: border-box;
-		 background: transparent;
-		 padding: 12px 16px;
-		 color: #fefefe;
-		 border: 1px solid rgba(248, 248, 248, 0.288);
-	 }
-	 #btn2:hover{
-		 background: #ffdb58;
-		 color:black;
-		 text-decoration-line: none;
-	 }
-	 .padding-left ul li{
-		 text-decoration: none;
-		 text-decoration-line: cancel-all;
-	 }
-	 .nav-btm li{
-		 text-decoration: none;
-		 list-style: none;
-		 text-underline-position:auto;
-		 color:white;
-	 }
-	 .nav-btm li a{
-		 color:white;
-		 font-size: 14px;
-		 line-height: 1.2;
-	 }
-	 .nav-btm h2{
-		 font-size:22px;
-		 font-weight:600;
-	 }
-	 
-	 footer {
-		 display: block
-	 }
-	 
-	 #footer {
-		 border-top: none;
-		 font: 12px/18px;
-		
-		 padding: 0 0 10px;
-		 text-align: left
-	 }
-	 
-	 
-	 .section-footer ul li {
-	   margin-bottom: 5px;
-	 }
-	 .section-footer ul a {
-	   color: inherit;
-	 }
-	 .section-footer ul a:hover {
-	   color: #3167eb;
-	 }
-	 .section-footer .logo-footer {
-	   height: 40px;
-	 }
-	 .section-footer .title {
-	   font-weight: 600;
-	   margin-bottom: 16px;
-	   color: #fefefe;
-	 }
-	 
-	 .footer-bottom {
-	   padding-top: 20px;
-	   padding-bottom: 20px;
-	 }
-	 
-	 .footer-copyright {
-	   padding-top: 20px;
-	   padding-bottom: 20px;
-	 }
-	 .logo-tab{
-		 margin-left:150px;
-		 margin-top:15px;
-	 }
-	 
-	 
-	 </style>
+    <script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static 'ecommerce/lib/imageviewer/imageviewer.min.js' %}"></script>
+    <script src="{% static 'ecommerce/lib/lobibox/lobibox.min.js' %}"></script>
+    <script src="{% static 'ecommerce/js/jquery.form.js' %}"></script>
+    <script src="{% static 'ecommerce/js/global.js' %}"></script>
+    <script src="{% static 'ecommerce/js/app.js' %}"></script>
+    <script>
+        $('.main-carousel').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            dots: false,
+            autoplayHoverPause: false,
+            autoplay: 5000,
+            smartSpeed: 700,
+            navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                760: {
+                    items: 1,
+                    nav: false
+                },
+                1024: {
+                    items: 1
+                },
+                1100: {
+                    items: 1
+                }
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#testimonial-slider").owlCarousel({
+                items: 3,
+                itemsDesktop: [1000, 3],
+                itemsDesktopSmall: [980, 2],
+                itemsTablet: [768, 2],
+                itemsMobile: [650, 1],
+                pagination: true,
+                navigation: false,
+                slideSpeed: 1000,
+                autoPlay: true
+            });
+        });
+    </script>
+    <style>
+        footer {
+            background: rgb(4, 4, 39);
+            color: #fcfcfc;
+            line-height: 1.8;
+            overflow: hidden;
+            margin-bottom: 0;
+            padding: 0;
+        }
+        
+        .grid-g a {
+            color: #fdfdfd;
+            font-size: 13px;
+        }
+        
+        .grid-g h2 {
+            font-size: 25px;
+        }
+        
+        .grid-g ul li {
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        .grid-g h2 {
+            font-family: Calibri;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .grid-g {
+            display: grid;
+            display: table-header-group;
+            font-family: Calibri;
+            margin-top: 40px;
+            text-align: left;
+            margin-left: 90px;
+            margin-right: 10px;
+            margin-bottom: 50px;
+        }
+        
+        .padding-left {
+            margin-left: 120px;
+            margin-top: px;
+        }
+        
+        .about-a {
+            line-height: 1.3;
+            margin-left: 20px
+        }
+        
+        .about-a h2 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        
+        .about-a p {
+            font-size: 14px;
+            line-height: 1.2;
+        }
+        
+        .grid-g button {
+            border: none;
+            color: #fefefe;
+            border-radius: 25px;
+            height: 40px;
+            padding: 7px 4px;
+            width: 85px;
+            font-weight: 100;
+            background: rgba(5, 99, 99, 0.884);
+            cursor: pointer;
+        }
+        
+        .footer-bottom p {
+            height: 40px;
+            margin-top: 70px;
+            text-align: center;
+            color: #ffffff;
+            padding: 8px 15px;
+        }
+        
+        .logo-tab h1 {
+            font-family: Calibri;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        #btn2 {
+            box-sizing: border-box;
+            background: transparent;
+            padding: 12px 16px;
+            color: #fefefe;
+            border: 1px solid rgba(248, 248, 248, 0.288);
+        }
+        
+        #btn2:hover {
+            background: #ffdb58;
+            color: black;
+            text-decoration-line: none;
+        }
+        
+        .padding-left ul li {
+            text-decoration: none;
+            text-decoration-line: cancel-all;
+        }
+        
+        .nav-btm li {
+            text-decoration: none;
+            list-style: none;
+            text-underline-position: auto;
+            color: white;
+        }
+        
+        .nav-btm li a {
+            color: white;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+        
+        .nav-btm h2 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        
+        footer {
+            display: block
+        }
+        
+        #footer {
+            border-top: none;
+            font: 12px/18px;
+            padding: 0 0 10px;
+            text-align: left
+        }
+        
+        .section-footer ul li {
+            margin-bottom: 5px;
+        }
+        
+        .section-footer ul a {
+            color: inherit;
+        }
+        
+        .section-footer ul a:hover {
+            color: #3167eb;
+        }
+        
+        .section-footer .logo-footer {
+            height: 40px;
+        }
+        
+        .section-footer .title {
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #fefefe;
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .footer-copyright {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .logo-tab {
+            margin-left: 150px;
+            margin-top: 15px;
+        }
+    </style>
 </body>
+
 </html>
