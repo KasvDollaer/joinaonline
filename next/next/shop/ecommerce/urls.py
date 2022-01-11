@@ -7,6 +7,17 @@ from . import views
 app_name = 'ecommerce' # This will be like this: {% url 'ecommerce:detail' item.id %} on our templates. 
 urlpatterns = [
 	url(r'^$', views.index, name='index'),
+	url(r'^money_refund/', views.moneyrefund, name='comingsoon'),
+	url(r'^career/', views.career, name='coming_soon'),
+	url(r'^shipping_info/', views.shippinginfo, name='comingsoon'),
+	url(r'^open_dispute/', views.opendispute, name='comingsoon'),
+	url(r'^rules_and_terms/', views.rulesandterms, name='comingsoon'),
+	url(r'^fing_a_store/', views.findastore, name='comingsoon'),
+	url(r'^samsung/', views.Samsung, name='comingsoon'),
+	url(r'^sony/', views.Sony, name='comingsoon'),
+	url(r'^LG/', views.LG, name='comingsoon'),
+	url(r'^Philips/', views.Philips, name='comingsoon'),
+	url(r'^fing_a_store/', views.findastore, name='contact'),
 	url(r'^products/$', views.products, name='products'),
 	url(r'^product/(?P<product_id>[0-9]+)/$', views.single_product, name='single_product'),
 	url(r'^about/$', views.about, name='about'),
