@@ -22,6 +22,16 @@
 					</select>
 				</div>
 				<div class="form-group">
+					<select class="form-control mb-4" name="sub-category">
+						<option selected disabled>Select Sub-Category</option>
+				
+						{% for cat in s_category %}
+						<option value="{{cat.id}}">{{cat.name}}</option>
+						{% endfor %}
+				
+					</select>
+				</div>
+				<div class="form-group">
 					<label for="{{ form.name.id_for_label }}">Name*</label>
 					{{ form.name }}
 				</div>
