@@ -1,0 +1,150 @@
+{% extends "ecommerce/base.html" %} 
+{% load static %}
+
+{% block content %}
+
+<div class="category">
+	<section class="section-main bg padding-y">
+		<div class="container col-lg-9">
+	
+			<div class="row">
+				<aside class="col-md-3">
+					<nav class="card">
+						<ul class="menu-category">
+							{% for sub_category in sub_categories %}
+							<li><a href="#"> {{ sub_category.name }}</a>	
+							</li>
+						   {% endfor %}
+						</ul>
+					</nav>
+				</aside> <!-- col.// -->
+	
+				<div class="col-md-9">
+					<div class="banner-wrap">
+						<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	
+						<div class="container-fluid noPadding">
+									<!--Slider-->
+									<div class=" owl-carousel owl-theme main-carousel animated fadeInUp wow">
+										<!--Slide-->
+										<div class="slide-item">
+											<img src="{{category.category_image.url}}" alt="1349x516">
+										</div>
+										<!-- /slide-item -->
+									
+									</div>
+									<!-- /slider -->
+					 </div>
+	
+					</div>
+					<img src="{{category.category_image.url}}" class="w-100 rounded">
+					<br>
+					<br>
+				
+				</div>
+			</div> <!-- col.// -->
+		</div> <!-- row.// -->
+	</div> <!-- container //  -->
+	</section>
+  <div>
+    <div class="container-fluid">
+      {% csrf_token %}
+      <form class="post-list">
+        <input type="hidden" value="" />
+      </form>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header">Filter</div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Search Keyword: </label>
+                <input
+                  type="text"
+                  class="form-control product_search_text"
+                  placeholder="Enter a keyword"
+                />
+              </div>
+              <div class="form-group">
+                <label>Per Page: </label>
+                <select class="form-control post_max">
+                  <option value="4">4</option>
+                  <option value="8" selected>8</option>
+                  <option value="16">16</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Order By: </label>
+                <select class="form-control post_name">
+                  <option value="name">Product Name</option>
+                  <option value="price">Price</option>
+                  <option value="quantity">Availabe Stocks</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Sorting: </label>
+                <select class="form-control post_sort">
+                  <option value="ASC">Ascending</option>
+                  <option value="DESC">Descending</option>
+                </select>
+              </div>
+              <input
+                type="submit"
+                value="Filter"
+                class="btn btn-success btn-block product_search_submit"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-9">
+          {% if request.GET.cart %}
+          <div class="alert alert-success">
+            {% if request.GET.cart == '0' %} Item successfully removed from cart
+            {% else %} Item successfully added to cart {% endif %}
+          </div>
+          {% endif %}
+          <div class="category-view-all">
+            <div class="pagination-container row"></div>
+            <div class="pagination-nav"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(".main-carousel").owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        dots: false,
+        autoplayHoverPause: false,
+        autoplay: 5000,
+        smartSpeed: 700,
+        navText: [
+          '<span class="fa fa-angle-left"></span>',
+          '<span class="fa fa-angle-right"></span>',
+        ],
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 1,
+          },
+          760: {
+            items: 1,
+            nav: false,
+          },
+          1024: {
+            items: 1,
+          },
+          1100: {
+            items: 1,
+          },
+        },
+      });
+    </script>
+    {% endblock %}
+  </div>
+</div>

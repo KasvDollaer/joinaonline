@@ -5775,7 +5775,9 @@ any other head content must come *after* these tags --><meta name="description" 
                         <nav class="nav-home-aside">
                             <h5 class="title-category">CATEGORIES <i class="d-md-none icon fa fa-chevron-down"></i></h5>
                             <ul class="menu-category">
-
+                                {% for category in categories %}
+                                    <li><a href="{% url 'ecommerce:get_category' category.category_slug %}"> {{  category.name }}</a></li>
+                                {% endfor %}
                                 <li class="has-submenu"><a href="#">More items</a>
                                     <ul class="submenu">
                                         <li><a href="#">Kitchen Appliances</a></li>

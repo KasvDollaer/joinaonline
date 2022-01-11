@@ -55,7 +55,6 @@ function get_url_value(variable) {
    }
    return(false);
 }
-
 /**
  * Scrolls to the specfied element.
  */
