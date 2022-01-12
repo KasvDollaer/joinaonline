@@ -821,3 +821,118 @@ def get_category(request, category_slug):
 	else:	
 		return render(request, Helpers.get_url('categories/category.html'), context)
 
+
+def subcategory(request, subcategory_slug):
+	sub_category = Sub_Category.objects.get(subcategory_slug=subcategory_slug)
+	category = sub_category.category
+
+	context = {
+		'category': category,
+		'sub_category': sub_category,
+	}
+	if request.method == 'POST':
+		pagination_content = ""
+		page_number = request.POST['data[page]'] if request.POST['data[page]'] else 1
+		page = int(page_number)
+		name = request.POST['data[name]']
+		sort = '-' if request.POST['data[sort]'] == 'DESC' else ''
+		search = request.POST['data[search]']
+		max = int(request.POST['data[max]'])
+		cur_page = page
+		page -= 1
+		per_page = max  # Set the number of results to display
+		start = page * per_page
+		# Get Category Information
+
+		# If search keyword is not empty, we include a query for searching
+		# the "content" or "name" fields in the database for any matched strings.
+		if search:
+			all_posts = Product.objects.filter(sub_category=sub_category).filter(
+				Q(content__contains=search) | Q(name__contains=search)).exclude(status=0).order_by(sort + name)[
+						start:per_page]
+			count = Product.objects.filter(Q(content__contains=search) | Q(name__contains=search)).exclude(
+				status=0).count()
+
+		# all_posts = Product.objects.filter(Q(category_contains = category) | Q(content__contains = search)|Q(name__contains = search)).exclude(status = 0).order_by(sort + name)[start:per_page]
+		# count = Product.objects.filter(Q(content__contains = search) | Q(category_contains = category) | Q(name__contains = search)).exclude(status = 0).count()
+
+		else:
+			all_posts = Product.objects.filter(sub_category=sub_category).exclude(status=0).order_by(sort + name)[
+						start:cur_page * max]
+			count = Product.objects.exclude(status=0).count()
+
+		if all_posts:
+			cart_items = request.session
+
+			# Create an empty cart object if it does not exist yet
+			if not cart_items.has_key("cart"):
+				cart_items["cart"] = {}
+
+			for post in all_posts:
+				in_cart = True if cart_items['cart'].get(str(post.id)) else False
+				action = 'delete' if in_cart else 'add'
+				status = 0 if in_cart else 1
+
+				if in_cart:
+					button = "<input type='submit' value='Remove from Cart' class='btn btn-block btn-danger' />"
+				else:
+					button = '''
+						<div class='input-group'>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text">Qty</div>
+								</div>
+								<input type='number' id='quantity' min='1' max='%d' class='form-control' name='quantity' value='1' />
+								<div class="input-group-append">
+									<button type='submit' class='btn btn-primary'>Add To Cart</button>
+								</div>
+							</div>
+						</div>
+					''' % (post.quantity)
+
+				pagination_content += '''
+					<div class='col-md-3 col-sm-6'>
+						<div class='card mb-2'>
+							<div class='card-header'>%s</div>
+							<div class='card-body p-0'>
+								<a href='%s'>
+									<img src='%s' width='%s' class='img-responsive'>
+								</a>
+								<div class='list-group list-group-flush'>
+									<div class='list-group-item border-top-0 py-2'>
+										<i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>Price</p>
+										<h4 class='list-group-item-heading'>%s %s</h4>
+									</div>
+									<div class='list-group-item py-2'>
+										<i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>On Stock</p>
+										<h4 class='list-group-item-heading'>%d</h4>
+									</div>
+								</div>
+							</div> 
+							<div class='card-footer'>
+								<form method='post' action='/ecommerce/cart/'>
+									<input type='hidden' name='redirect' value='/ecommerce/subcategory/%s/?cart=%s&page=%s' />
+									<input type='hidden' name='action' value='%s' />
+                                    <input type='hidden' name='item_id' value='%d' />
+									%s
+                                </form>
+							</div>
+						</div>
+					</div>
+				''' % (
+				post.name, Helpers.get_path('product/' + str(post.id)), Helpers.get_path(post.featured_image), '100%',
+				EcommerceConfig.currency, intcomma(post.price), post.quantity, sub_category.subcategory_slug, status, cur_page,
+				action, post.id, button)
+				print(category.category_slug)
+		else:
+			pagination_content += "<p class='bg-danger'>No results</p>"
+
+		return JsonResponse({
+			'subcategory_content': pagination_content,
+			'subcategory_navigation': Helpers.nagivation_list(count, per_page, cur_page)
+		})
+	else:
+		return render(request, Helpers.get_url('categories/subcategory.html'), context)
+

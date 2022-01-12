@@ -25,6 +25,7 @@ urlpatterns = [
 	url(r'^cart/$', views.cart, name='cart'),
 	url(r'^checkout/$', views.checkout, name='checkout'),
 	url(r'^get_category/(?P<category_slug>\D+)/$', views.get_category, name='get_category'),
+	url(r'^subcategory/(?P<subcategory_slug>\D+)/$', views.subcategory, name='subcategory'),
 	
 
 	url(r'^user/', include([

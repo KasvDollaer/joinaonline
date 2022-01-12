@@ -46,22 +46,58 @@
                 <li class="nav-item">
 
                     <div class="col-md-12">
-                        <form action="#" class="search-header">
-                            <div class="input-group w-100">
-                                <select class="custom-select border-right" name="category_name">
-									<option value="">	 type</option><option value="codex">Special</option>
-									<option value="comments">Only best</option>
-									<option value="content">Latest</option>
-							</select>
-                                <input type="text" class="form-control" placeholder="Search">
-
-                                <div class="input-group-append">
-                                    <button class="btn btn-success" type="submit">
-								<i class="fa fa-search"></i> Search
-							  </button>
+                        <div class="search-header">
+                         {% csrf_token %}
+                            <form method="post" action=" {% url 'ecommerce:products' %}" class = "post-list" >
+                                <input type = "hidden" value = "" />
+                            </form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="">
+                                            <div class="form-group d-none">
+                                                <label>Per Page: </label>
+                                                <select class="form-control post_max">
+                                                    <option value="4">4</option>
+                                                    <option value="8" selected>8</option>
+                                                    <option value="16">16</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group d-none">
+                                                <label>Order By: </label>
+                                                <select class="form-control post_name">
+                                                    <option value="name">Product Name</option>
+                                                    <option value="price">Price</option>
+                                                    <option value="quantity">Availabe Stocks</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group d-none">
+                                                <label>Sorting: </label>
+                                                <select class="form-control post_sort">
+                                                    <option value="ASC">Ascending</option>
+                                                    <option value="DESC">Descending</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group w-100">
+                                                <select class="custom-select border-right" name="category_name">
+                                                    <option value="">type</option><option value="codex">Special</option>
+                                                    <option value="comments">Only best</option>
+                                                    <option value="content">Latest</option>
+                                            </select>
+                                            <input type="text" class="form-control base_search_text" placeholder="Enter a keyword" />
+                
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary btn-block base_search_submit" type="submit">
+                                                <i class="fa fa-search"></i> Search
+                                              </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                         <!-- search-wrap .end// -->
                     </div>
                 </li>
@@ -198,6 +234,7 @@
     <script type="text/javascript">
         var module_path = '/ecommerce/'
         var category_slug = "{{ category.category_slug}}/"
+        var subcategory_slug = "{{ sub_category.subcategory_slug}}/"
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
