@@ -25,6 +25,10 @@ urlpatterns = [
 	url(r'^cart/$', views.cart, name='cart'),
 	url(r'^checkout/$', views.checkout, name='checkout'),
 	url(r'^get_category/(?P<category_slug>\D+)/$', views.get_category, name='get_category'),
+    
+    url(r'^categories/', include([
+        url(r'^electronics/$', views.categories_electronics, name='categories_electronics')
+    ])),
 	
 
 	url(r'^user/', include([
