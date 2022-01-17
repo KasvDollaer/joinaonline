@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
@@ -7,6 +8,7 @@ class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=30)
     about = models.TextField()
+    is_customer = models.BooleanField(null=True)
 
 
 class Category(models.Model):
@@ -50,6 +52,7 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField()
     author = models.PositiveIntegerField()
     featured_image = models.CharField(max_length=300)
+    picture = models.ImageField(upload_to='products/', blank=True, null=True)
 
     def __str__(self):
         return self.name
