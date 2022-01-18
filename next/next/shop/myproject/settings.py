@@ -120,4 +120,7 @@ PAYNOW_INTEGRATION_KEY = ''
 # Location of uploaded image files on the server.
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    
+
+
+import django_on_heroku
+django_on_heroku.settings(locals())
