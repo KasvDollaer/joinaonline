@@ -14,7 +14,7 @@ width: 25%;
 }
 </style>
 
-
+{% csrf_token %}
 <div class="form-inline " id="inner" action="/ecommerce/vendors/index" method="get" >
 			<label>Per Page:</label>
 			<select class="form-control ml-sm-2 post_max">
