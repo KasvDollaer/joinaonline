@@ -23,7 +23,7 @@ import json
 def index(request):
 	categories = Category.objects.all()
 	preview_products = Product.objects.all().order_by('-id')[:12]
-	electronics = Product.objects.all()
+	electronics = Category.objects.all()
 	return render(request, Helpers.get_url('index.html'), {'products': preview_products,'categories':categories, 'currency': EcommerceConfig.currency})
 
 def single_product(request, product_id):
@@ -45,6 +45,12 @@ def single_product(request, product_id):
 	
 	return render(request, Helpers.get_url('product/single.html'), {'product': product, 'images': str(images).replace("'", '"'), 'in_cart': in_cart, 'author': author, 'currency': EcommerceConfig.currency})
 	
+
+	def vendors(request):
+		alluser=member.object.all()
+		context={'alluser':alluser}
+		return render(request, Helpers.get_url('vendors/index.html'),context)
+
 def products(request):
 	if request.method == 'POST':
 		pagination_content = ""
