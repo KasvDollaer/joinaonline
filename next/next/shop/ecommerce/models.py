@@ -5,9 +5,14 @@ from django.utils.text import slugify
 
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    mimage = models.ImageField(upload_to = 'members/' ,blank=True, null=True)
     phone_number = models.CharField(max_length=30)
     about = models.TextField()
-
+    @property
+    def photo_url(self):
+         if self.mimage and hasattr(self.mimage, 'url'):
+         
+            return self.mimage.url
 
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
@@ -53,9 +58,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+        
     
     
-
+class Meta:
+        db_table = 'members'
 
 class Image(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')

@@ -2,6 +2,7 @@ from django.conf.urls import include, url
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 from . import views
 
 app_name = 'ecommerce' # This will be like this: {% url 'ecommerce:detail' item.id %} on our templates. 
@@ -25,14 +26,28 @@ urlpatterns = [
 	url(r'^about/$', views.about, name='about'),
 	url(r'^contact/$', views.contact, name='contact'),
 	url(r'^cart/$', views.cart, name='cart'),
+  
+    url(r'^success', views.success, name = 'success'),
 	url(r'^checkout/$', views.checkout, name='checkout'),
 	url(r'^get_category/(?P<category_slug>\D+)/$', views.get_category, name='get_category'),
+    
+    url(r'^categories/', include([
+        url(r'^electronics/$', views.categories_electronics, name='categories_electronics')
+    ])),
+    
+   
+    url(r'^vendors/', include([
+        url(r'^index/$', views.vendors, name='vendors'),
+        
+        url(r'^stockorder/$', views.stockorder, name='stockorder')
+    ])),
 	
 
 	url(r'^user/', include([
         url(r'^login/$', views.user_login, name='user_login'),
 		url(r'^register/$', views.user_register, name='user_register'),
 		url(r'^account/$', views.user_account, name='user_account'),
+        url(r'^index/$', views.user_index, name='user_index'),
 		url(r'^products/$', views.user_products, name='user_products'),
 		url(r'^view_products/$', views.user_products, name='user_products'),
 		url(r'^product/create/$', views.user_product_create, name='user_product_create'),

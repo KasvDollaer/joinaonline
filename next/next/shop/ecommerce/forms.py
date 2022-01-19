@@ -1,4 +1,5 @@
 from django import forms
+from .models import *
 
 class RegisterForm(forms.Form):
 	username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
@@ -16,7 +17,7 @@ class AccountForm(forms.Form):
 	password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control', 'placeholder': 'Leave blank if no change'}), required=False)
 	password_repeat = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control', 'placeholder': 'Leave blank if no change'}), required=False)
 	first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-	last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+	mimage = forms.CharField(widget=forms.FileInput(attrs={'class':'form-control image-input', 'accept': 'image/*', 'multiple': 'multiple'}), required=False)
 	phone_number = forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}), required=False)
 	about_me = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'id': 'ck-editor-area'}), required=False)
 	
@@ -37,3 +38,9 @@ class UpdateProductForm(forms.Form):
 	price = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Amount'}))
 	status = forms.CharField(widget=forms.Select(choices=(('1', 'Active'),('0', 'Inactive'),), attrs={'class':'form-control'}))
 	quantity = forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}))
+    
+class MemberForm(forms.ModelForm):
+  
+    class Meta:
+        model = Member
+        fields = ['mimage']
