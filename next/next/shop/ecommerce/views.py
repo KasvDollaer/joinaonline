@@ -156,6 +156,7 @@ def moneyrefund(request):
 def career(request):
 	return render(request, Helpers.get_url('comingsoon.html'))
 
+
 def shippinginfo(request):
 	return render(request, Helpers.get_url('comingsoon.html'))
 
