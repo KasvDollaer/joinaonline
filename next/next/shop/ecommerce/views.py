@@ -254,7 +254,7 @@ def user_account(request):
 			else:
 				user.username = form.cleaned_data['username']
 				user.first_name = form.cleaned_data['first_name']
-				user.mimage = request.POST['image']
+				user.image = request.POST['image']
 				
 				user.member.phone_number = form.cleaned_data['phone_number']
 				user.member.about = form.cleaned_data['about_me']
