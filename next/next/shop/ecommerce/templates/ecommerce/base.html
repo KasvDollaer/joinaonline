@@ -48,9 +48,7 @@
                     <div class="col-md-12">
                         <div class="search-header">
                          {% csrf_token %}
-                            <form method="post" action=" {% url 'ecommerce:products' %}" class = "post-list" >
-                                <input type = "hidden" value = "" />
-                            </form>
+                            {% comment %} <form method="post" action=" {% url 'ecommerce:basesearch' %}" class = "post-list" >
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="card">
@@ -79,16 +77,16 @@
                                                 </select>
                                             </div>
                                             <div class="input-group w-100">
-                                                <select class="custom-select border-right" name="category_name">
-                                                    <option value="">type</option><option value="codex">Special</option>
-                                                    <option value="comments">Only best</option>
-                                                    <option value="content">Latest</option>
+                                                <select class="custom-select border-right post_sort" name="category_name">
+                                                    <option value="ASC">Ascending</option>
+                                                    <option value="DESC">Descending</option>
                                             </select>
-                                            <input type="text" class="form-control base_search_text" placeholder="Enter a keyword" />
-                
+
+                                            <input type="search" class="form-control" placeholder="Enter a keyword" />
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-primary btn-block base_search_submit" type="submit">
-                                                <i class="fa fa-search"></i> Search
+                                                    <button class="btn btn-primary btn-block" type="">
+                                                <i class="fa fa-search"></i>
+                                                        Search
                                               </button>
                                                 </div>
                                             </div>
@@ -96,7 +94,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                         <!-- search-wrap .end// -->
                     </div>

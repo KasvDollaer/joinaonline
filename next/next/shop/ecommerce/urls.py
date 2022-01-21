@@ -20,10 +20,12 @@ urlpatterns = [
 	url(r'^fing_a_store/', views.findastore, name='contact'),
 	url(r'^products/$', views.products, name='products'),
 	url(r'^product/(?P<product_id>[0-9]+)/$', views.single_product, name='single_product'),
+	url(r'^review/(?P<product_id>[0-9]+)/$', views.review, name='review'),
 	url(r'^about/$', views.about, name='about'),
 	url(r'^contact/$', views.contact, name='contact'),
 	url(r'^cart/$', views.cart, name='cart'),
 	url(r'^checkout/$', views.checkout, name='checkout'),
+	url(r'^basesearch/$', views.base_search, name='basesearch'),
 	url(r'^get_category/(?P<category_slug>\D+)/$', views.get_category, name='get_category'),
 	url(r'^subcategory/(?P<subcategory_slug>\D+)/$', views.subcategory, name='subcategory'),
 	

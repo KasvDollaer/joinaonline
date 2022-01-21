@@ -1,5 +1,5 @@
 from django import forms
-from .models import Category
+from .models import Category, Reviews
 
 class RegisterForm(forms.Form):
 	username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
@@ -44,3 +44,13 @@ class UpdateProductForm(forms.Form):
 	price = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Amount'}))
 	status = forms.CharField(widget=forms.Select(choices=(('1', 'Active'),('0', 'Inactive'),), attrs={'class':'form-control'}))
 	quantity = forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}))
+
+class ReviewForm(forms.ModelForm):
+	email = forms.CharField(widget=forms.EmailInput(attrs={'class':'form-control'}))
+	review = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'rows': '5'}), required=True)
+	
+	class Meta:
+		model = Reviews
+		fields = ['email','review']
+
+	

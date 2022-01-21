@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
-from .models import Member, Product, Image, Sub_Category, Category
+from .models import Member, Product, Image, Sub_Category, Category, Reviews
 
 # Define an inline admin descriptor for Member model
 # which acts a bit like a singleton
@@ -35,3 +35,6 @@ admin.site.register(Product, ProductAdmin)
 #Category and SubCategory Models
 admin.site.register(Category)
 admin.site.register(Sub_Category)
+
+#Review
+admin.site.register(Reviews)

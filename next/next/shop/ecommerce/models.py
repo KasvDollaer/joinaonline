@@ -60,3 +60,12 @@ class Product(models.Model):
 class Image(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='products/' ,blank=True, null=True)
+
+class Reviews(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE,related_name='reviews')
+    review = models.TextField()
+    email = models.EmailField(max_length=250)
+    date = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.email

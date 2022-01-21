@@ -5,8 +5,9 @@ from django.contrib.auth import authenticate, login, logout as django_logout # U
 from django.contrib.auth.models import User
 from django.contrib.humanize.templatetags.humanize import intcomma
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import BadHeaderError, HttpResponseRedirect, HttpResponse
 from django.http import JsonResponse
+from django.contrib import messages
 from django.db.models import Q
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
@@ -18,7 +19,9 @@ from .forms import *
 from .helpers import Helpers
 from time import gmtime, strftime
 from django.http import HttpResponse
-import json
+from django.conf import settings
+from django.core.mail import send_mail
+
 
 def index(request):
 	categories = Category.objects.all()
@@ -171,15 +174,8 @@ def LG(request):
 	return render(request, Helpers.get_url('comingsoon.htm;'))
 
 def Philips(request):
-	return render(request, Helpers.get_url('comingsoon.html'))
-	
-	
-	
-	
-	
-	
-	
-	
+	return render(request, Helpers.get_url('comingsoon.html'))	
+		
 def contact(request):
 	return render(request, Helpers.get_url('contact.html'))
 
@@ -695,26 +691,6 @@ def categories_homeKitchen(request):
 def categories_digital(request):
 	return render(request, Helpers.get_url('categories/digital-goods.html'))
 
-#Get category
-# def get_category(request, category_slug):
-# 	category = Category.objects.get(category_slug=category_slug)
-# 	sub_categories = Sub_Category.objects.filter(category = category)
-# 	category_products = Product.objects.filter(category = category )
-# 	latest_product = Product.objects.latest('date')
-# 	context={
-# 		'category':category,
-# 		'sub_categories': sub_categories,
-# 		'category_products': category_products,
-# 		'latest_product':latest_product,
-# 	}
-# 	for cat in category_products:
-# 		print(cat.name)
-
-
-
-# 	return render(request, Helpers.get_url('categories/category.html'), context)
-
-
 def get_category(request, category_slug):
 	category = Category.objects.get(category_slug=category_slug)
 	sub_categories = Sub_Category.objects.filter(category = category)
@@ -735,32 +711,32 @@ def get_category(request, category_slug):
 		per_page = max # Set the number of results to display
 		start = page * per_page
 		#Get Category Information
-		
-		# If search keyword is not empty, we include a query for searching 
+
+		# If search keyword is not empty, we include a query for searching
 		# the "content" or "name" fields in the database for any matched strings.
 		if search:
 			all_posts = Product.objects.filter(category=category).filter(Q(content__contains = search) | Q(name__contains = search)).exclude(status = 0).order_by(sort + name)[start:per_page]
 			count = Product.objects.filter(Q(content__contains = search) | Q(name__contains = search)).exclude(status = 0).count()
-					 
+
 			#all_posts = Product.objects.filter(Q(category_contains = category) | Q(content__contains = search)|Q(name__contains = search)).exclude(status = 0).order_by(sort + name)[start:per_page]
 			#count = Product.objects.filter(Q(content__contains = search) | Q(category_contains = category) | Q(name__contains = search)).exclude(status = 0).count()
-			
+
 		else:
 			all_posts = Product.objects.filter(category=category).exclude(status = 0).order_by(sort + name)[start:cur_page * max]
 			count = Product.objects.exclude(status = 0).count()
-		
+
 		if all_posts:
 			cart_items = request.session
-			
-			# Create an empty cart object if it does not exist yet 
+
+			# Create an empty cart object if it does not exist yet
 			if not cart_items.has_key("cart"):
 				cart_items["cart"] = {}
-			
+
 			for post in all_posts:
 				in_cart = True if cart_items['cart'].get(str(post.id)) else False
 				action = 'delete' if in_cart else 'add'
 				status = 0 if in_cart else 1
-				
+
 				if in_cart:
 					button = "<input type='submit' value='Remove from Cart' class='btn btn-block btn-danger' />"
 				else:
@@ -777,7 +753,7 @@ def get_category(request, category_slug):
 							</div>
 						</div>
 					''' %(post.quantity)
-				
+
 				pagination_content += '''
 					<div class='col-md-3 col-sm-6'>
 						<div class='card mb-2'>
@@ -813,12 +789,12 @@ def get_category(request, category_slug):
 				print(category.category_slug)
 		else:
 			pagination_content += "<p class='bg-danger'>No results</p>"
-		
+
 		return JsonResponse({
-			'category_content': pagination_content, 
+			'category_content': pagination_content,
 			'category_navigation': Helpers.nagivation_list(count, per_page, cur_page)
 		})
-	else:	
+	else:
 		return render(request, Helpers.get_url('categories/category.html'), context)
 
 
@@ -935,4 +911,51 @@ def subcategory(request, subcategory_slug):
 		})
 	else:
 		return render(request, Helpers.get_url('categories/subcategory.html'), context)
+@csrf_exempt
+def base_search(request):
+	return HttpResponseRedirect(Helpers.get_path('products'))
 
+def review(request, product_id):
+	product = get_object_or_404(Product, pk=product_id)
+	author = get_object_or_404(User, pk=product.author)
+	product_images = product.images.all()
+	images = []
+	reviews = Reviews.objects.filter(product = product).order_by('-date')
+
+	if request.method == "POST":
+		form = ReviewForm(request.POST)
+		# Check if the form is valid
+		if form.is_valid():	
+			email = form.cleaned_data.get('email')			
+			# Check if the email exists.
+			if str(email) == str(author.email):					
+				review = form.save(commit=False)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+				review.product = product
+				review.save()
+
+				# Send Thank you ...
+				review_subject = "Joina Ecommerce "
+				review_message = "Thank for you"
+				from_email = settings.EMAIL_HOST_USER
+				to_email = [email]
+
+				if review_message and review_subject and from_email:
+					try:
+						send_mail(review_subject,review_message,from_email,to_email,fail_silently=False,)
+					except BadHeaderError:
+						return HttpResponse("Email not sent...")					
+				return HttpResponseRedirect(Helpers.get_path('review/'+str(product.id)))
+
+			else:
+				messages.warning(request, "User not Found. You cannot review this product.")
+				return HttpResponseRedirect(Helpers.get_path('review/'+str(product.id)))
+			
+		if product_images:
+			for data in product_images:
+				images.append({"small": Helpers.get_path(str(data.image)), 'big': Helpers.get_path(str(data.image))})
+	else:
+		form = ReviewForm()
+
+	
+	return render(request, Helpers.get_url('product/review.html'), {'product': product,'form':form,'images': str(images).replace("'", '"'), 'author': author, 'currency': EcommerceConfig.currency, 'reviews':reviews})
+	
