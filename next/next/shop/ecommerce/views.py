@@ -641,6 +641,9 @@ def multiply(qty, unit_price, *args, **kwargs):
 def categories_electronics(request):
 	return render(request, Helpers.get_url('categories/electronics.html'))
 
+def categories_food(request):
+	return render(request, Helpers.get_url('categories/food.html'))
+
 
 def categories_mensClothing(request):
 	return render(request, Helpers.get_url('categories/mens-clothing.html'))
