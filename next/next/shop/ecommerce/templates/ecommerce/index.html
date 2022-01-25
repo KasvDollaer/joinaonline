@@ -5834,23 +5834,29 @@
 
     </style>
 	 <section class="section-main padding-y">
-		<main class="card">
+		<main class="card" >
 			<div class="card-body">
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	<div id="carouselExampleIndicators" id="BannerT" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 		  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 		  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 		  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 		</ol>
-		<div class="carousel-inner">
+		<style>
+		#BannerT{
+		height:8cm;
+		width:4cm
+		}
+		</style>
+		<div class="carousel-inner" >
 		  <div class="carousel-item active">
-			<img class="d-block w-100"  src="{% static 'ecommerce/img/mens_banner.jpg' %} "alt="Welcome to the heart of Harare where you get cheap, quality and affordable goods.">
+			<img  id="BannerT" class="d-block w-100"  src="{% static 'ecommerce/img/mens banner.jpg' %} "alt="Welcome to the heart of Harare where you get cheap, quality and affordable goods.">
 		  </div>
 		  <div class="carousel-item">
-			<img class="d-block w-100"  src="{% static 'ecommerce/img/womens_banner.jpg' %}" alt="Second slide">
+			<img id="BannerT" class="d-block w-100"  src="{% static 'ecommerce/img/women banner.jpg' %}" alt="Second slide">
 		  </div>
 		  <div class="carousel-item">
-			<img class="d-block w-100" src="{% static 'ecommerce/img/slider-image-5.jpg' %}" alt="Third slide">
+			<img id="BannerT" class="d-block w-100" src="{% static 'ecommerce/img/productsbanner.jpg' %}" alt="Third slide">
 		  </div>
 		</div>
 		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -5865,6 +5871,8 @@
 	  </div>
 		</main>
 	  </section>
+	  <br>
+	  <br>
     <div class="container col-lg-11" ">
         <!-- ========================= SECTION MAIN  ========================= -->
         <section class="section-main padding-y">
