@@ -15,7 +15,7 @@ width: 25%;
 </style>
 
 {% csrf_token %}
-<div class="form-inline " id="inner" action="/ecommerce/vendors/index" method="get" >
+<div class="form-inline " id="inner" action="function" method="get" >
 			<label>Per Page:</label>
 			<select class="form-control ml-sm-2 post_max">
 				<option value="5">5</option>
@@ -24,8 +24,8 @@ width: 25%;
 			</select>
 		
 			<label class="ml-sm-3 mt-3 mt-xl-0">Search Keyword:</label>
-			<input type="text" name="q" class="form-control ml-sm-2 post_search_text" placeholder="Enter a keyword">
-			<input type = "submit"  value = "Filter" class = "btn btn-primary mt-3 mt-xl-0 post_search_submit" />
+			<input type="text" name="q" id="q" class="form-control ml-sm-2 post_search_text" placeholder="Enter a keyword">
+			 <a href="/ecommerce/vendors/search"><input type ="submit"  id="search_input"  value = "Filter" class = "btn btn-primary mt-3 mt-xl-0 post_search_submit" /></a>
 		</div>
 		<br>
 		<br>
@@ -74,7 +74,7 @@ a.btn-primary {
 
 </table>
 <br>
-<br>
+<br> 
 
 
 
@@ -86,4 +86,6 @@ a.btn-primary {
 
 </div>
 </div>
+
 {% endblock %}
+ 

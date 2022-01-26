@@ -33,13 +33,15 @@ urlpatterns = [
     
     url(r'^categories/', include([
         url(r'^electronics/$', views.categories_electronics, name='categories_electronics'),
-        url(r'^food/$', views.categories_food, name='categories_food')
+        url(r'^food/$', views.categories_food, name='categories_food'),
+        url(r'^women/$', views.categories_women, name='categories_women'),
+        url(r'^home-kitchen/$', views.categories_homeKitchen, name='categories_women')
     ])),
     
    
     url(r'^vendors/', include([
         url(r'^index/$', views.vendors, name='vendors'),
-        
+        url(r'^search/$', views.search, name='search'),
         url(r'^stockorder/$', views.stockorder, name='stockorder')
     ])),
 	

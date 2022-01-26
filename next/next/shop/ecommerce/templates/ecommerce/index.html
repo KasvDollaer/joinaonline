@@ -5874,10 +5874,15 @@
 	  <br>
 	  <br>
     <div class="container col-lg-11" ">
+	<style>
+	#cat{
+	height:10cm;
+	}
+	</style>
         <!-- ========================= SECTION MAIN  ========================= -->
         <section class="section-main padding-y">
-            <main class="card">
-                <div class="card-body">
+            <main class="card" id="cat" >
+                <div class="card-body" id="cat" >
 
                     <div class="row">
                         <aside class="col-lg col-md-3 flex-lg-grow-0">
@@ -5950,20 +5955,22 @@
                                 <div class="card-banner border-bottom">
                                     <div class="py-3" style="width:100%; height:1cm">
                                             <h6 class="card-title">Electronic &amp; Gadgets</h6>
-                                            <a href="#" class="btn btn-secondary btn-sm"> Source now </a>
+                                           
                                         </div> 
                                         <img src="{% static 'ecommerce/img/gadgets.jpg' %}" class="img-bg" height="80">
                                     </div>
-
+<a href="/ecommerce/categories/electronics" class="btn btn-secondary btn-sm"> Source now </a>
                                     
 
                                     <div class="card-banner border-bottom">
                                         <div class="py-3" style="width:100%; height:1cm">
                                             <h6 class="card-title">Home inventory</h6>
-                                            <a href="#" class="btn btn-secondary btn-sm"> Source now </a>
+                                            
                                         </div> 
                                         <img src="{% static 'ecommerce/img/Home-Inventory.png' %}" class="img-bg" height="80">
+										
                                     </div>
+									<a href="/ecommerce/categories/home-kitchen" class="btn btn-secondary btn-sm"> Source now </a>
 
                                 </aside>
                             </div> <!-- col.// -->
@@ -6070,7 +6077,7 @@
                                 <h3 class="title text-light">Best trending clothes only for summer</h3>
                                 <br>
                                 <p class="text-light">View the best of collection of women's clothes and a wide range of electronic items </p>
-                                <a href="#" class="btn btn-light rounded-pill">Source now</a>
+                                <a href="/ecommerce/categories/women" class="btn btn-light rounded-pill">Source now</a>
                                 <img src="{% static 'ecommerce/img/women clothes1.jpeg' %}" class="img-bg">
                             </div>
 
@@ -6174,7 +6181,7 @@
                                 <h3 class="title text-light">Electronics items from good brands</h3>
                                 <br>
                                 <p class="text-light">Get the best and trusted electronic gadgets from a variety of brands</p>
-                                <a href="#" class="btn btn-light rounded-pill">Source now</a>
+                                <a href="/ecommerce/categories/electronics" class="btn btn-light rounded-pill">Source now</a>
                                 <img src="{% static 'ecommerce/img/banner.jpg' %}" class="img-bg">
                             </div>
 

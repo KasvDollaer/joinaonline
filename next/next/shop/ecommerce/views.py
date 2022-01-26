@@ -706,6 +706,9 @@ def categories_homeKitchen(request):
 def categories_digital(request):
 	return render(request, Helpers.get_url('categories/digital-goods.html'))
     
+def categories_women(request):
+	return render(request, Helpers.get_url('categories/women.html'))
+    
 
 
 def vendors(request):
@@ -796,14 +799,11 @@ def user_index(request):
 def success(request):
     return HttpResponse('successfully uploaded')
     
-class SearchResultsView(ListView):
-    model = Member
-    template_name = 'vendors/index.html'
 
-    def get_queryset(self): # new
-        query = self.request.GET.get('q')
-        object_list = Member.objects.filter(
-            Q(user__icontains=query) 
-        )
-        return object_list
     
+def search(request):
+    
+    posti = request.POST['data[q]']
+ 
+    members = Member.objects.filter(Q(user__contains = posti)  )
+    return render(request, 'vendors/search.html', {'members': members})
