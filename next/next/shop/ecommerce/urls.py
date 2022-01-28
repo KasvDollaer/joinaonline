@@ -17,6 +17,7 @@ urlpatterns = [
 	url(r'^samsung/', views.Samsung, name='comingsoon'),
 	url(r'^sony/', views.Sony, name='comingsoon'),
 	url(r'^categories/electronics/', views.categories_electronics, name='electronics'),
+	url(r'^categories/mens-clothing/', views.categories_mensClothing, name='mensClothing'),
 	url(r'^LG/', views.LG, name='comingsoon'),
 	url(r'^Philips/', views.Philips, name='comingsoon'),
 	url(r'^fing_a_store/', views.findastore, name='contact'),
