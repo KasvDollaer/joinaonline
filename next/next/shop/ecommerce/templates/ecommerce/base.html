@@ -1,4 +1,4 @@
-{% load static %}
+{% load humanize static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +49,7 @@
                         <form action="#" class="search-header">
                             <div class="input-group w-100">
                                 <select class="custom-select border-right" name="category_name">
-									<option value="">	 type</option><option value="codex">Special</option>
+									<option value="">Type</option><option value="codex">Special</option>
 									<option value="comments">Only best</option>
 									<option value="content">Latest</option>
 							</select>
@@ -122,9 +122,9 @@
                     <aside class="col-md col-6">
                         <h3 class="title">Company</h3>
                         <ul class="list-unstyled">
-                            <li> <a href="/ecommerce/about">About us</a></li>
+                            <li> <a href="/ecommerce/about"> About</a></li>
                             <li> <a href="{% url 'ecommerce:comingsoon' %}">Career</a></li>
-                            <li> <a href="{% url 'ecommerce:contact'%}">Find a store</a></li>
+                            <li> <a href="{% url 'ecommerce:contact'%}">Find a Store</a></li>
                             <li> <a href="{% url 'ecommerce:about' %}">Rules and terms</a></li>
                             <li> <a href="https://maps.google.com/maps/dir//Joina+City+Corner+Jason+Moyo+Ave+%26+Julius+Nyerere+Way+Harare/@-17.8318344,31.047353,13z/data=!4m5!4m4!1m0!1m2!1m1!1s0x1931a4e50c894921:0xe01ec669a775682e">Sitemap</a></li>
                         </ul>
@@ -135,33 +135,38 @@
                             <li> <a href="/ecommerce/contact">Contact us</a></li>
                             <li> <a href="{% url 'ecommerce:comingsoon' %}">Money refund</a></li>
                             <li> <a href="{% url 'ecommerce:comingsoon' %}">Order status</a></li>
-                            <li> <a href="{% url 'ecommerce:comingsoon' %}">Shipping info</a></li>
+                            <li> <a href="{% url 'ecommerce:comingsoon' %}">Shipping Info</li>
                             <li> <a href="{% url 'ecommerce:comingsoon' %}">Open dispute</a></li>
                         </ul>
+						
                     </aside>
                     <aside class="col-md col-6">
                         <h3 class="title">Account</h3>
                         <ul class="list-unstyled">
-                            <li> <a href="/ecommerce/user/login"> User Login </a></li>
-                            <li> <a href="/ecommerce/user/register"> User register </a></li>
-                            <li> <a href="/ecommerce/user/account"> Account Setting </a></li>
-                            <li> <a href="{% url 'ecommerce:comingsoon' %}"> My Orders </a></li>
+                            <li> <a href="/ecommerce/user/login"><i class="fas fa-user-circle"></i> User Login </a></li>
+                            <li> <a href="/ecommerce/user/register"><i class="fa-duotone fa-cash-register"></i> User register </a></li>
+                            <li> <a href="/ecommerce/user/account" ><i class="fa-solid fa-gears"></i> Account Setting </a></li>
+                            <li> <a href="{% url 'ecommerce:comingsoon' %} "><i class="fa-duotone fa-bags-shopping"></i> My Orders </a></li>
                         </ul>
                     </aside>
                     <aside class="col-md">
                         <h3 class="title">Social</h3>
                         <ul class="list-unstyled">
                             <li>
-                                <a href="https://www.facebook.com"> <i class="https://www.facebook.com/pages/Joina%20City/209871832356182/"></i> Facebook </a>
+                                <a href="https://www.facebook.com/pages/Joina%20City/209871832356182/"> <i class="fa fa-facebook"></i> Facebook </a>
                             </li>
                             <li>
                                 <a href="https://m.twitter.com/login"> <i class="fa fa-twitter"></i> Twitter </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/login"> <i class="www.joinacity.co.zw"></i> Instagram </a>
+                                <a href="https://www.instagram.com/login"> <i class="fa fa-instagram"></i> Instagram </a>
                             </li>
+							
                             <li>
-                                <a href="https:www.youtube.com/watch?v="> <i class="fa fa-youtube"></i> Youtube </a>
+                                <a href="https://www.youtube.com/watch?v="> <i class="fa fa-youtube"></i> Youtube </a>
+                            </li>
+							<li>
+                                <a href="https://www.joinacity.co.zw"> <i class="fa-brands fa-internet-explorer"></i></i> Website </a>
                             </li>
                         </ul>
                     </aside>
@@ -170,12 +175,12 @@
             </section>
             <!-- footer-top.// -->
 
-            <section class="footer-bottom border-top row">
-                <div class="col-md-2">
-                    <p class="text-muted"> © 2022 Cicosy</p>
-                </div>
-                <div class="col-md-8 text-md-center">
+            <section class="footer-bottom border-top row" style="text-align:center;">
+                
+                <div  style="text-align:center; margin-left:3.5cm; margin-right:3.5cm;">
                     <span class="px-2">info@cicosy.com</span>
+					<br>
+					<br>
                     <span class="px-2"></span>
                     <span class="px-2">Cnr Julius Nyerere &amp; Jason Moyo</span>
                     <span class="px-2">| Cicosy E-Business </span>
@@ -185,12 +190,38 @@
                     <span class="px-2">| Cicosy Institute </span>
                     <span class="px-2">| Cicosy Media </span>
                 </div>
-                <div class="col-md-2 text-md-right text-muted">
-                    <i class="fa fa-cc-visa"></i>
-                    <i class="fa fa-lg fa-cc-paypal"></i>
-                    <i class="fa fa-lg fa-cc-mastercard"></i>
-                </div>
+                
             </section>
+			<style>
+			.fab {
+  color : orange;}
+  .fas {
+  
+  color:grey;
+}
+.fa-cc-mastercard {
+  
+  color:lightblue;
+}
+.fa-cc-visa {
+  
+  color:red;
+}
+
+			</style>
+			<section style="text-align:center;">
+			<div size="10px" >
+			        <i class="fab fa-cc-visa fa-5x"></i>
+                    <i class="fas fa-credit-card fa-5x"></i>
+                    <i class="fab fa-cc-paypal fa-5x"></i>
+                    <i class="fab fa-cc-mastercard fa-5x" size="5x"></i>
+                </div>
+				<br>
+					<br>
+				<div  style="text-align:center;">
+                    <p class="text-muted"> © 2022 Cicosy</p>
+                </div>
+				</section>
         </div>
         <!-- //container -->
     </footer>
