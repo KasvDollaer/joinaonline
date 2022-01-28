@@ -157,7 +157,6 @@ def moneyrefund(request):
 def career(request):
 	return render(request, Helpers.get_url('comingsoon.html'))
 
-
 def shippinginfo(request):
 	return render(request, Helpers.get_url('comingsoon.html'))
 
@@ -561,7 +560,7 @@ def user_register(request):
 				member = Member.objects.create(
 					user = user,
 					phone_number = form.cleaned_data['phone_number'],
-					mimage = request.POST['mimage'] ,
+				
                   
                     
 				)

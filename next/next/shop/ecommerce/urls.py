@@ -9,7 +9,6 @@ app_name = 'ecommerce' # This will be like this: {% url 'ecommerce:detail' item.
 urlpatterns = [
 	url(r'^$', views.index, name='index'),
 	url(r'^money_refund/', views.moneyrefund, name='comingsoon'),
-	url(r'^vendors/', views.vendors, name='index.html'),
 	url(r'^career/', views.career, name='coming_soon'),
 	url(r'^shipping_info/', views.shippinginfo, name='comingsoon'),
 	url(r'^open_dispute/', views.opendispute, name='comingsoon'),
