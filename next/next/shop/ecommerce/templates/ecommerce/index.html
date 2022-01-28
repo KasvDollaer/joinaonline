@@ -6369,82 +6369,70 @@ any other head content must come *after* these tags --><meta name="description" 
                 </a>
                 {% endfor %}
                 <!-- col.// -->
-                {% for item in products %}
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
 
-                        <figcaption class="info-wrap">
-                            <a href="{% url 'ecommerce:single_product' item.id %}">
-                                <img src="https://picsum.photos/g/700/450/?random" width='110%' class='img-responsive'>
-                            </a>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                        <div class='list-group list-group-flush'>
-                            <div class='list-group-item border-top-0 py-2'>
-                                <i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
-                                <p class='list-group-item-text mb-0'>Price</p>
-                                <h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
-                            </div>
-                            <div class='list-group-item py-2'>
-                                <i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
-                                <p class='list-group-item-text mb-0'>On Stock</p>
-                                <h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
-                            </div>
+                <!-- col.// -->
+                {% for item in products %}
+                <a href="{% url 'ecommerce:single_product' item.id %}">
+
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+
+                        <div class="card card-sm card-product-grid">
+                            <a href="{% url 'ecommerce:single_product' item.id %}" class="img-wrap">
+                                <img src="https://picsum.photos/g/700/450/?random" width='100%' class='img-responsive' style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+
+                                <div class='list-group list-group-flush'>
+                                    <a href="{% url 'ecommerce:single_product' item.id %}" class="title">
+                                        <h6 class='list-group-item-heading'>{{ item.name }}</h6>
+                                    </a>
+                                    <div class='list-group-item border-top-0 py-1'>
+                                        <i class='fa fa-shopping-cart fa-1x pr-2 pt-2 float-left'></i>
+                                        <p class='list-group-item-text mb-0'></p>
+                                        <h6 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h6>
+                                    </div>
+                                    <div class='list-group-item py-1'>
+                                        <i class='fa fa-cubes fa-1x pr-2 pt-2 float-left'></i>
+                                        <p class='list-group-item-text mb-0'>On Stock</p>
+                                        <h6 class='list-group-item-heading'>{{ item.quantity }}</h6>
+                                    </div>
+                                </div>
+                                <!-- price-wrap.// -->
+                            </figcaption>
                         </div>
                     </div>
-                </div>
+                </a>
                 {% endfor %}
                 <!-- col.// -->
                 {% for item in products %}
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
+                <a href="{% url 'ecommerce:single_product' item.id %}">
 
-                        <figcaption class="info-wrap">
-                            <a href="{% url 'ecommerce:single_product' item.id %}">
-                                <img src="https://picsum.photos/g/700/450/?random" width='110%' class='img-responsive'>
-                            </a>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                        <div class='list-group list-group-flush'>
-                            <div class='list-group-item border-top-0 py-2'>
-                                <i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
-                                <p class='list-group-item-text mb-0'>Price</p>
-                                <h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
-                            </div>
-                            <div class='list-group-item py-2'>
-                                <i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
-                                <p class='list-group-item-text mb-0'>On Stock</p>
-                                <h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
-                            </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+
+                        <div class="card card-sm card-product-grid">
+                            <a href="{% url 'ecommerce:single_product' item.id %}" class="img-wrap">
+                                <img src="https://picsum.photos/g/700/450/?random" width='100%' class='img-responsive' style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+
+                                <div class='list-group list-group-flush'>
+                                    <a href="{% url 'ecommerce:single_product' item.id %}" class="title">
+                                        <h6 class='list-group-item-heading'>{{ item.name }}</h6>
+                                    </a>
+                                    <div class='list-group-item border-top-0 py-1'>
+                                        <i class='fa fa-shopping-cart fa-1x pr-2 pt-2 float-left'></i>
+                                        <p class='list-group-item-text mb-0'></p>
+                                        <h6 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h6>
+                                    </div>
+                                    <div class='list-group-item py-1'>
+                                        <i class='fa fa-cubes fa-1x pr-2 pt-2 float-left'></i>
+                                        <p class='list-group-item-text mb-0'>On Stock</p>
+                                        <h6 class='list-group-item-heading'>{{ item.quantity }}</h6>
+                                    </div>
+                                </div>
+                                <!-- price-wrap.// -->
+                            </figcaption>
                         </div>
                     </div>
-                </div>
-                {% endfor %}
-                <!-- col.// -->
-                {% for item in products %}
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-
-                        <figcaption class="info-wrap">
-                            <a href="{% url 'ecommerce:single_product' item.id %}">
-                                <img src="https://picsum.photos/g/700/450/?random" width='110%' class='img-responsive'>
-                            </a>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                        <div class='list-group list-group-flush'>
-                            <div class='list-group-item border-top-0 py-2'>
-                                <i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
-                                <p class='list-group-item-text mb-0'>Price</p>
-                                <h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
-                            </div>
-                            <div class='list-group-item py-2'>
-                                <i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
-                                <p class='list-group-item-text mb-0'>On Stock</p>
-                                <h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </a>
                 {% endfor %}
                 <!-- col.// -->
                 {% for item in products %}
