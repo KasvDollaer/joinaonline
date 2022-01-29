@@ -60,17 +60,17 @@ class Product(models.Model):
     
 class Order(models.Model):
 	# Private Information
-	first_name = models.CharField(max_length=50)
-	last_name = models.CharField(max_length=50)
+	first_name = models.CharField(max_length=50, default='')
+	last_name = models.CharField(max_length=50, default='')
 	email = models.EmailField()
-	phone = models.CharField(max_length=15)
+	phone = models.CharField(max_length=15, default='')
 
 	# Geographical Information
-	address = models.CharField(max_length=150)
-	city = models.CharField(max_length=50)
-	company = models.CharField(max_length=100, null=True, blank=True)
-	zip_code = models.CharField(max_length=10)
-	state = models.CharField(max_length=50, null=True, blank=True)
+	address = models.CharField(max_length=150, default='')
+	city = models.CharField(max_length=50, default='')
+	company = models.CharField(max_length=100, null=True, blank=True, default='')
+	zip_code = models.CharField(max_length=10, default='')
+	state = models.CharField(max_length=50, null=True, blank=True, default='')
 	country = models.CharField(max_length=50, null=True, blank=True, default='Zimbabwe')
 	order_notes = models.CharField(max_length=10000, null=True, blank=True )
 

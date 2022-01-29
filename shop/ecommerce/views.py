@@ -39,8 +39,8 @@ def index(request):
 def single_product(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
 	author = get_object_or_404(User, pk=product.author)
-	product_images = product.images.all()
-	images = []
+	# product_images = product.images.all()
+	# images = []
 	cart_items = request.session
 	
 	# Create an empty cart object if it does not exist yet 
@@ -49,11 +49,11 @@ def single_product(request, product_id):
 		
 	in_cart = True if cart_items['cart'].get(str(product_id)) else False
 	
-	if product_images:
-		for data in product_images:
-			images.append({"small": Helpers.get_path(str(data.image)), 'big': Helpers.get_path(str(data.image))})
-	
-	return render(request, Helpers.get_url('product/single.html'), {'product': product, 'images': str(images).replace("'", '"'), 'in_cart': in_cart, 'author': author, 'currency': EcommerceConfig.currency})
+	# if product_images:
+	# 	for data in product_images:
+	# 		images.append({"small": Helpers.get_path(str(data.image)), 'big': Helpers.get_path(str(data.image))})
+	# 'images': str(images).replace("'", '"')
+	return render(request, Helpers.get_url('product/single.html'), {'product': product, 'in_cart': in_cart, 'author': author, 'currency': EcommerceConfig.currency})
 	
 def products(request):
 	if request.method == 'POST':
@@ -750,6 +750,7 @@ def checkout(request):
 	products = Product.objects.filter(pk__in=item_ids)
 	for item in products:
 		cart_item = cart_items["cart"].get(str(item.id))
+		cart_total= 0
 		cart_total = (item.price * cart_item.get("quantity")) + cart_total
 	if request.method == 'POST':
 		form = CheckoutForm(request.POST)

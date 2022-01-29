@@ -61,7 +61,7 @@ class CheckoutForm(forms.ModelForm):
 	class Meta:
 		model = Order
 		fields = ('first_name', 'last_name', 'email', 'phone', 'address', 'city',
-				  'zip_code', 'state', 'payment_method', 'order notes')
+				  'zip_code', 'state', 'payment_method', 'order_notes')
 
 	# quantity = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control'}))
 	# update = forms.BooleanField(required=False, initial=False, widget=forms.HiddenInput)

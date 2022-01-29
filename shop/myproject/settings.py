@@ -112,7 +112,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-
+CART_SESSION_ID = 'cart'
 # Paynow.co.zw API Settings
 # Change these setting to the ones generated in your user account on http://paynow.co.zw/
 PAYNOW_INTEGRATION_ID = ''
