@@ -115,7 +115,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'ecommerce/static')
 STATIC_URL = '/ecommerce/static/'
 # STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'ecommerce/static'),)
 
-
+CART_SESSION_ID = 'cart'
 # Paynow.co.zw API Settings
 # Change these setting to the ones generated in your user account on http://paynow.co.zw/
 PAYNOW_INTEGRATION_ID = ''

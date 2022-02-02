@@ -13,12 +13,22 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.template.defaulttags import register
 from .apps import EcommerceConfig
-from .models import Member, Product, Image, User, Sub_Category, Category
+from .models import Member, Product, User, Sub_Category, Category
 from .forms import *
 from .helpers import Helpers
 from time import gmtime, strftime
 from django.http import HttpResponse
 import json
+
+from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib import messages
+from django.template.loader import render_to_string
+import weasyprint
+from .forms import CheckoutForm
+from .models import OrderItem, Order
+from .tasks import order_mail
+
+
 
 def index(request):
 	categories = Category.objects.all()
@@ -29,8 +39,8 @@ def index(request):
 def single_product(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
 	author = get_object_or_404(User, pk=product.author)
-	product_images = product.images.all()
-	images = []
+	# product_images = product.images.all()
+	# images = []
 	cart_items = request.session
 	
 	# Create an empty cart object if it does not exist yet 
@@ -39,11 +49,11 @@ def single_product(request, product_id):
 		
 	in_cart = True if cart_items['cart'].get(str(product_id)) else False
 	
-	if product_images:
-		for data in product_images:
-			images.append({"small": Helpers.get_path(str(data.image)), 'big': Helpers.get_path(str(data.image))})
-	
-	return render(request, Helpers.get_url('product/single.html'), {'product': product, 'images': str(images).replace("'", '"'), 'in_cart': in_cart, 'author': author, 'currency': EcommerceConfig.currency})
+	# if product_images:
+	# 	for data in product_images:
+	# 		images.append({"small": Helpers.get_path(str(data.image)), 'big': Helpers.get_path(str(data.image))})
+	# 'images': str(images).replace("'", '"')
+	return render(request, Helpers.get_url('product/single.html'), {'product': product, 'in_cart': in_cart, 'author': author, 'currency': EcommerceConfig.currency})
 	
 def products(request):
 	if request.method == 'POST':
@@ -651,24 +661,27 @@ def cart(request):
 		# return HttpResponse(cart_items.items())
 		return render(request, Helpers.get_url('cart.html'), {'cart_session_items': cart_items["cart"], 'cart_db_items': products, 'cart_total': float("%0.2f" % (cart_total)), 'currency': EcommerceConfig.currency})
 
-@csrf_exempt	
-def checkout(request):
-	cart_items = request.session
+
+
+# OLD CHECKOUT
+# @csrf_exempt	
+# def checkout(request):
+# 	cart_items = request.session
 	
-	# Create an empty cart object if it does not exist yet 
-	if not cart_items.has_key("cart"):
-		cart_items["cart"] = {}
+# 	# Create an empty cart object if it does not exist yet 
+# 	if not cart_items.has_key("cart"):
+# 		cart_items["cart"] = {}
 		
-	item_ids = cart_items["cart"].keys()
-	products = Product.objects.filter(pk__in=item_ids)
+# 	item_ids = cart_items["cart"].keys()
+# 	products = Product.objects.filter(pk__in=item_ids)
 	
-	cart_total = 0
-	for item in products:
-		cart_item = cart_items["cart"].get(str(item.id))
-		cart_total = (item.price * cart_item.get("quantity")) + cart_total
+# 	cart_total = 0
+# 	for item in products:
+# 		cart_item = cart_items["cart"].get(str(item.id))
+# 		cart_total = (item.price * cart_item.get("quantity")) + cart_total
 		
-		# return HttpResponse(result)
-	return render(request, Helpers.get_url('checkout.html'), {'cart_session_items': cart_items["cart"], 'cart_db_items': products, 'cart_total': float("%0.2f" % (cart_total)), 'currency': EcommerceConfig.currency})
+# 		# return HttpResponse(result)
+# 	return render(request, Helpers.get_url('checkout.html'), {'cart_session_items': cart_items["cart"], 'cart_db_items': products, 'cart_total': float("%0.2f" % (cart_total)), 'currency': EcommerceConfig.currency})
 
 # Template function for accessing cart dictionary item by key
 @register.filter
@@ -718,3 +731,73 @@ def get_category(request, category_slug):
 
 
 	return render(request, Helpers.get_url('product/get_category.html'), context)
+
+
+
+#orders views
+
+
+
+# Create your views here.
+def checkout(request):
+	# def checkout(request):
+	cart_items = request.session
+	
+	if not cart_items.has_key("cart"):
+		cart_items["cart"] = {}
+		
+	item_ids = cart_items["cart"].keys()
+	products = Product.objects.filter(pk__in=item_ids)
+	for item in products:
+		cart_item = cart_items["cart"].get(str(item.id))
+		cart_total= 0
+		cart_total = (item.price * cart_item.get("quantity")) + cart_total
+	if request.method == 'POST':
+		form = CheckoutForm(request.POST)
+		if form.is_valid():
+			order = form.save()
+			for product in products:
+				OrderItem.objects.create(order=order, product=product, price=product.price, quantity=product.quantity)
+
+			cart_total = 0
+			del request.session[settings.CART_SESSION_ID]
+	
+		return render(request, Helpers.get_url('index.html'), messages.success(request, 'Purchase Successful, Continue Shopping'))
+	else:
+		form = CheckoutForm()
+		# context  = {'cart': cart,}
+		return render(request, Helpers.get_url('checkout.html'), {'cart_session_items': cart_items["cart"], 'cart_db_items': products, 'cart_total': float("%0.2f" % (cart_total)), 'currency': EcommerceConfig.currency, 'form': form})
+		
+		# return render(request, 'checkout.html', context)
+	
+		# return HttpResponse(result)
+
+	# cart = cart(request)
+	
+		
+			# # for item in cart:
+				
+			# cart.clear()
+			# context = {'order': order, 'cart': cart}
+			# order_mail.delay(order.id)
+			
+			# # extra code needed for item
+
+	
+
+
+@staff_member_required
+def admin_order_detail(request, order_id):
+	order = get_object_or_404(Order, id=order_id)
+	return render(request, 'staff/order_detail.html', {'order': order})
+
+
+@staff_member_required
+def admin_order_pdf(request, order_id):
+	order = get_object_or_404(Order, id=order_id)
+	html = render_to_string('order_pdf.html', {'order':order})
+	response = HttpResponse(content_type='application/pdf')
+	response['Content-Disposition'] = 'filename="order_{}.pdf"'.format(order.id)
+
+	weasyprint.HTML(string=html).write_pdf(response)
+	return response
