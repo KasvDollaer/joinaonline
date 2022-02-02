@@ -25,6 +25,7 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div> -->
+
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -3658,7 +3659,16 @@
 	  </style></head>
 	
         
-        
+	{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+				<li class="{{ message.tags }}">
+			 	{{ message|safe }}
+				<a href="#" class="close">x</a>
+				</li>
+		 	{% endfor %}
+		</ul>
+	{% endif %}	 
         <nav class="navbar navbar-main navbar-expand-lg border-bottom">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -3666,37 +3676,27 @@
             </button>
         
             <div class="collapse navbar-collapse" id="main_nav">
-<<<<<<< HEAD:next/next/shop/ecommerce/templates/ecommerce/index.html
-=======
 		
 				
->>>>>>> main:shop/ecommerce/templates/ecommerce/index.html
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bars text-muted mr-2"></i> CATEGORIES </a>
                     <div class="dropdown-menu dropdown-submenu">
                         <nav class="row">
-                            <div class="col-6">
+                            <div class=''>
 							   
 							
-                                <a href="page-index-1.html">Home page 1</a>
-                                <a href="page-index-2.html">Home page 2</a>
+                                <a href="">Home page 1</a>
+                                <a href="page-index-2.html">All Prodcuts</a>
                                 <a href="page-category.html">All category</a>
-                                <a href="page-listing-large.html">Listing list</a>
-                                <a href="page-listing-grid.html">Listing grid</a>
-                                <a href="page-shopping-cart.html">Shopping cart</a>
-                                <a href="page-detail-product.html">Product detail</a>
-                                <a href="page-user-login.html">Login</a>
-                                <a href="page-user-register.html">Register</a>
-                            </div>
-                            <div class="col-6">
-                                <a href="page-profile-main.html">Profile main</a>
-                                <a href="page-profile-orders.html">Profile orders</a>
-                                <a href="page-profile-seller.html">Profile seller</a>
+                               
+								{% for cat in categories %}
+								<a href="page-listing-large.html">{{ cat.name }}</a>
+
+								{% endfor %}
                                 
-                                <a href="rtl-page-index-1.html">RTL home page</a>
-                                <a href="page-components.html" target="_blank">More components</a>
                             </div>
+                          
                         </nav> <!--  row end .// -->
                     </div> <!--  dropdown-menu dropdown-large end.// -->
                 </li>
@@ -3704,7 +3704,7 @@
                     <a class="nav-link" href="#">Ready to ship</a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD:next/next/shop/ecommerce/templates/ecommerce/index.html
+
                 <a class="nav-link" href="#">Trade shows</a>
                 </li>
                 <li class="nav-item">
@@ -3718,13 +3718,14 @@
                     <li class="nav-item">
                     <a class="nav-link" href="#">Get the app</a>
                 </li>
-=======
+
                 <a class="nav-link" href="#">Services</a>
                 </li>
 				<li class="nav-item">
                 <a class="nav-link" href="{% url 'ecommerce:user_product_create' %}">Sell your product</a>
                 </li>
 		
+
             </ul>
 			
             <ul class="navbar-nav ml-md-auto"> 	
@@ -3732,7 +3733,7 @@
                     <a class="nav-link" href="#">Get the app</a>
                 </li>
 				
->>>>>>> main:shop/ecommerce/templates/ecommerce/index.html
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">English</a>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -3743,8 +3744,6 @@
                     </div>
                 </li>
                 </ul>
-<<<<<<< HEAD:next/next/shop/ecommerce/templates/ecommerce/index.html
-=======
 				<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Help</a>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -3754,7 +3753,7 @@
                     <a class="dropdown-item" href="#">FAQ</a>
                     </div>
                 </li>
->>>>>>> main:shop/ecommerce/templates/ecommerce/index.html
+
             </div> <!-- collapse .// -->
         </div> <!-- container .// -->
         </nav>
@@ -3771,7 +3770,7 @@
     
 
 
-<<<<<<< HEAD:next/next/shop/ecommerce/templates/ecommerce/index.html
+
 <style>
 }
     .main-carousel .slide-item {
@@ -5300,7 +5299,6 @@
             color: #212529
         }
 
-=======
 
 
 
@@ -5311,8 +5309,9 @@
 
 
 
-<style>
-}
+
+
+
 .main-carousel .slide-item {
     width: 100%;
     height: 100%;
@@ -5402,12 +5401,7 @@
 .main-carousel .slide-item img {
     position: relative;
 }
-<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- The above 3 meta tags *must* come first in the head;
-any other head content must come *after* these tags --><meta name="description" content=""><meta name="author" content=""><link rel="icon" href="../../favicon.ico"><title>joina-online</title><!-- Bootstrap core CSS --><link rel="preconnect" href="https://fonts.gstatic.com"><link href="resources/css/mainstyle.css" rel="stylesheet"><link href="resources/css/style.min.ow.css" rel="stylesheet"><link href="resources/css/bootstrap.min.css" rel="stylesheet"><link href="resources/css/owl.carousel.min.css" rel="stylesheet"><link href="resources/css/" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet"><script src="resources/js/bootstrap.min.js"></script><style>@media print {
-    #ghostery-tracker-tally {
-        display: none !important
-    }
-}
+
 </style>
 
 <script src="resources/js/jquery.js"></script>
@@ -7223,12 +7217,12 @@ any other head content must come *after* these tags --><meta name="description" 
         .nav-home-aside .menu-category a {
             color: #212529
         }
->>>>>>> main:shop/ecommerce/templates/ecommerce/index.html
+
         .nav-home-aside .menu-category>li>a {
             display: block;
             padding: 10px 0px
         }
-<<<<<<< HEAD:next/next/shop/ecommerce/templates/ecommerce/index.html
+
 
         .nav-home-aside .menu-category .submenu {
             display: none;
@@ -7785,7 +7779,7 @@ any other head content must come *after* these tags --><meta name="description" 
         }
         /*------------*/
 
-=======
+
         .nav-home-aside .menu-category .submenu {
             display: none;
             -webkit-box-shadow: initial;
@@ -7888,7 +7882,7 @@ any other head content must come *after* these tags --><meta name="description" 
             padding-left: 5px;
             padding-right: 5px
         }
-    }
+
     
     
     /*------------*/
@@ -8013,7 +8007,7 @@ any other head content must come *after* these tags --><meta name="description" 
                                                     <span class="sr-only">Next</span>
                                                 </a>
                                         </div>
->>>>>>> main:shop/ecommerce/templates/ecommerce/index.html
+
 
 
 

@@ -1,9 +1,11 @@
 from django import forms
-<<<<<<< HEAD:next/next/shop/ecommerce/forms.py
+
 from .models import *
-=======
+
 from .models import Category
->>>>>>> main:shop/ecommerce/forms.py
+
+from .models import Category, Order
+
 
 class RegisterForm(forms.Form):
 	username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
@@ -54,3 +56,24 @@ class MemberForm(forms.ModelForm):
     class Meta:
         model = Member
         fields = ['mimage']
+
+class CheckoutForm(forms.ModelForm):
+	# first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), label='First name')
+	# last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), label='Last name')
+	# email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}), label='E-mail Address')
+	# phone = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), label='Telephone')
+	# address = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), label='Address')
+	# city = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), label='City')
+	# zip_code = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), label='ZIP code')
+	# state = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), label='State')
+	# order_notes = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), label='order_notes')
+
+	# delivery_method = forms.CharField(required=True)
+	# payment_method = forms.CharField(required=True)
+	class Meta:
+		model = Order
+		fields = ('first_name', 'last_name', 'email', 'phone', 'address', 'city',
+				  'zip_code', 'state', 'payment_method', 'order_notes')
+
+	# quantity = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control'}))
+	# update = forms.BooleanField(required=False, initial=False, widget=forms.HiddenInput)
