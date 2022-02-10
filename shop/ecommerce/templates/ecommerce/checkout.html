@@ -7,8 +7,12 @@
 		<br />
 		
         {% if cart_db_items %}
-            <form method="post" action="{% url 'ecommerce:checkout' %}">
-                <div class="row">
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+           
+            <!-- <form method="post" action="{% url 'ecommerce:checkout' %}"> -->
+                <!-- <div class="row">
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-header">
@@ -92,7 +96,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-sm-12 my-4">
                         <div class="card">
@@ -130,7 +134,7 @@
 										</tr>
 									</table>
 								</div>
-
+<!-- 
                                 <h3>Mode of Payment</h3>
                                 <div class="bg-primary text-white p-3">
                                     <div class="radio">
@@ -138,8 +142,8 @@
 											<input type="radio" name="payment_gateway" checked="checked" class="mr-2">
 											PayNow
 										</label>
-                                    </div>
-                                    <div class="radio">
+                                    </div> -->
+                                    <!-- <div class="radio">
                                         <label>
 											<input type="radio" name="payment_gateway" class="mr-2">
 											Dummy Payment Gateway 2
@@ -150,8 +154,8 @@
 											<input type="radio" name="payment_gateway" class="mr-2">
 											Dummy Payment Gateway 3
 										</label>
-                                    </div>
-                                </div>
+                                    </div> -->
+                                <!-- </div>
 
                                 <br />
                                 <input type="checkbox" name="terms_and_conditions" />&nbsp; I’ve read and accept the <a href="#">terms & conditions</a>
@@ -162,7 +166,13 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            </form> -->
+            <br />
+            <input type="checkbox" name="terms_and_conditions" />&nbsp; I’ve read and accept the <a href="#">terms & conditions</a>
+
+            <br />
+            <p><input type="submit" value="ORDER PRODUCT"></p>
+        </form>
         {% else %}
             <div class="alert alert-danger alert-dismissable">Your cart is currently empty</div>
         {% endif %}
