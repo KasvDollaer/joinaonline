@@ -3,7 +3,7 @@
 /myproject/__pycache__
 /db.sqlite3
 /media
-# /myproject/settings.py
+/myproject/settings.py
 official python gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/
