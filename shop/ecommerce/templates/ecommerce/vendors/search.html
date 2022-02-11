@@ -1,0 +1,86 @@
+{% extends "ecommerce/base.html" %}
+{% load humanize %}
+{% block content %}
+<style>
+#inner {
+  width: 50%;
+  margin: 0 auto;
+  background-color:lightgrey;
+}
+h2{
+width: 25%;
+  margin: 0 auto;
+}
+</style>
+
+<div class="form-inline " id="inner">
+			<label>Per Page:</label>
+			<select class="form-control ml-sm-2 post_max">
+				<option value="5">5</option>
+				<option value="10" selected>10</option>
+				<option value="15">15</option>
+			</select>
+		
+			<label class="ml-sm-3 mt-3 mt-xl-0">Search Keyword:</label>
+			<input type="text" name="q" class="form-control ml-sm-2 post_search_text" placeholder="Enter a keyword">
+			<input type = "submit" name="q" value = "Filter" class = "btn btn-primary mt-3 mt-xl-0 post_search_submit" />
+		</div>
+		<br>
+		<br>
+<div class="container">
+		<h2>Vendors List</h2>
+		<br/>
+{% if alluser  %}
+
+<style>
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th, td {
+  border-bottom: 1px solid #ddd;}
+  th, td {
+  padding: 10px;
+  text-align: left;
+}
+a.btn-primary {
+        float: right;
+
+</style>
+
+<table border="1" width="600" align="center">
+
+<tr>
+    <th>Vendors Name</th>
+    <th>Phone Number</th>
+	
+    <th>Image</th>
+  </tr>
+{% for member in members %}
+<tr>
+     <td>  <a href="/ecommerce/vendors/stockorder">{{ member.user }}</a>  </td>
+     <td> {{ member.phone_number }}</td>
+
+</tr>
+
+{% endfor %}
+{% else %}
+<div class="alert alert-danger alert-dismissable">Your vendors list is currently empty</div>
+{% endif %}
+
+</table>
+<br>
+<br>
+
+
+
+<div class="col-sm-6" style="align:center;">
+<a href="{% url 'ecommerce:index' %}" class="btn   btn-primary" align="right" style="text-align:center;">Close this Window</a>
+
+<br>
+<br>
+
+</div>
+</div>
+{% endblock %}

@@ -1,5 +1,5 @@
-{% extends "ecommerce/base.html" %} {% load humanize static %} {% block content %}
-
+{% extends "ecommerce/base.html" %}
+{% load humanize static %}
 
 	<head>
 		<meta charset="utf-8">
@@ -228,7 +228,7 @@
 	}
 	
 	.padding-bottom {
-		padding-bottom: 30px
+		padding-bottom: 10px
 	}
 	
 	.padding-y-lg {
@@ -1946,7 +1946,7 @@
 		}
 	
 		.padding-bottom {
-			padding-bottom: 20px
+			padding-bottom: 10px
 		}
 	
 		.padding-y-lg {
@@ -2153,7 +2153,7 @@
 	}
 	
 	.padding-bottom {
-		padding-bottom: 30px
+		padding-bottom: 10px
 	}
 	
 	.padding-y-lg {
@@ -5856,815 +5856,872 @@ any other head content must come *after* these tags --><meta name="description" 
                                                 </a>
                                         </div>
 
-                                        <!-- ==================  COMPONENT SLIDER BOOTSTRAP end.// ==================  .// -->
 
+
+
+
+
+    </style>
+	 <section class="section-main padding-y">
+		<main class="card" >
+			<div class="card-body">
+	<div id="carouselExampleIndicators" id="BannerT" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+		  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+		  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+		  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<style>
+		#BannerT{
+		height:8cm;
+		width:4cm
+		}
+		</style>
+		<div class="carousel-inner" >
+		  <div class="carousel-item active">
+			<img  id="BannerT" class="d-block w-100"  src="{% static 'ecommerce/img/mens banner.jpg' %} "alt="Welcome to the heart of Harare where you get cheap, quality and affordable goods.">
+		  </div>
+		  <div class="carousel-item">
+			<img id="BannerT" class="d-block w-100"  src="{% static 'ecommerce/img/women banner.jpg' %}" alt="Second slide">
+		  </div>
+		  <div class="carousel-item">
+			<img id="BannerT" class="d-block w-100" src="{% static 'ecommerce/img/productsbanner.jpg' %}" alt="Third slide">
+		  </div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Next</span>
+		</a>
+	  </div>
+	  </div>
+		</main>
+	  </section>
+	  <br>
+	  <br>
+    <div class="container col-lg-11" ">
+	<style>
+	#cat{
+	height:10cm;
+	}
+	</style>
+        <!-- ========================= SECTION MAIN  ========================= -->
+        <section class="section-main padding-y">
+            <main class="card" id="cat" >
+                <div class="card-body" id="cat" >
+
+                    <div class="row">
+                        <aside class="col-lg col-md-3 flex-lg-grow-0">
+                            <nav class="nav-home-aside">
+                                <h5 class="title-category">CATEGORIES <i class="d-md-none icon fa fa-chevron-down"></i></h5>
+                                <ul class="menu-category">
+
+                                    <li class="has-submenu"><a href="#">More items</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Kitchen Appliances</a></li>
+                                            <li><a href="#">More Gardening</a></li>
+                                            <li><a href="#">machinery Tools</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </aside> <!-- col.// -->
+                        <div class="col-md-9 col-xl-7 col-lg-7">
+
+                            <!-- ================== COMPONENT SLIDER  BOOTSTRAP  ==================  -->
+                            <div class="container-fluid noPadding">
+								<section class="container-fluid no padding-bottom"
+								<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+									<ol class="carousel-indicators">
+									  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+									  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+									  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+									</ol>
+									<div class="carousel-inner">
+									  <div class="carousel-item active">
+										<img src="{% static 'ecommerce/img/product-item-img.png' %}" class="d-block w-100" alt="...">
+										<div class="carousel-caption d-none d-md-block">
+										  <h5 > </h5>
+										  <p></p>
+										</div>
+									  </div>
+									  <div class="carousel-item">
+										<img src="{% static 'ecommerce/img/mobile accessories.png' %}" class="d-block w-100" alt="...">
+										<div class="carousel-caption d-none d-md-block">
+										  <h5> </h5>
+										  <p></p>
+										</div>
+									  </div>
+									  <div class="carousel-item">
+										<img src= "{% static 'ecommerce/img/summerclothes.jpg' %}" class="d-block w-100" alt="...">
+										<div class="carousel-caption d-none d-md-block">
+										  <h5></h5>
+										  <p></p>
+										</div>
+									  </div>
+									</div>
+									<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+									  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									  <span class="sr-only">Previous</span>
+									</a>
+									<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+									  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+									  <span class="sr-only">Next</span>
+									</a>
+								  </div>
+							
+                            <!-- ==================  COMPONENT SLIDER BOOTSTRAP end.// ==================  .// -->	
+
+                        </div> 
+						<!-- col.// -->
+                        <div class="col-md d-none d-lg-block flex-grow-1">
+                            <aside class="special-home-right">
+                                <h6 class="bg-blue text-center text-white mb-0 p-2">Popular category</h6>
+
+                                <div class="card-banner border-bottom">
+                                    <div class="py-3" style="width:100%; height:1cm">
+                                            <h6 class="card-title">Electronic &amp; Gadgets</h6>
+                                           
+                                        </div> 
+                                        <img src="{% static 'ecommerce/img/gadgets.jpg' %}" class="img-bg" height="80">
                                     </div>
-                                    <!-- col.// -->
-                                    <div class="col-md d-none d-lg-block flex-grow-1">
-                                        <aside class="special-home-right">
-                                            <h6 class="bg-blue text-center text-white mb-0 p-2">Popular category</h6>
+<a href="/ecommerce/categories/electronics" class="btn btn-secondary btn-sm"> Source now </a>
+                                    
 
-                                            <div class="card-banner border-bottom">
-                                                <div class="py-3" style="width:80%">
-                                                    <h6 class="card-title">Electronic &amp; Gadgets</h6>
-                                                    <a href="#" class="btn btn-secondary btn-sm"> Source now </a>
-                                                </div>
-                                                <img src="{% static 'ecommerce/img/images.jpg' %}" class="img-bg" height="80">
-                                            </div>
-
-                                            <div class="card-banner border-bottom">
-                                                <div class="py-3" style="width:80%">
-                                                    <h6 class="card-title">Winter clothing </h6>
-                                                    <a href="#" class="btn btn-secondary btn-sm"> Source now </a>
-                                                </div>
-                                                <img src="{% static 'ecommerce/img/images.jpg' %}" class="img-bg" height="80">
-                                                <br>
-                                            </div>
-
-                                            <div class="card-banner border-bottom">
-                                                <div class="py-3" style="width:80%">
-                                                    <h6 class="card-title">Home inventory</h6>
-                                                    <a href="#" class="btn btn-secondary btn-sm"> Source now </a>
-                                                </div>
-                                                <img src="{% static 'ecommerce/img/images.jpg' %}" class="img-bg" height="80">
-                                            </div>
-
-                                        </aside>
-                                    </div>
-                                    <!-- col.// -->
-                                </div>
-                                <!-- row.// -->
-
-                            </div>
-                            <!-- card-body.// -->
-        </main>
-        <!-- card.// -->
-
-        </section>
-        <!-- ========================= SECTION MAIN END// ========================= -->
-
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-
-        <script>
-            $('#myCarousel').carousel({
-                interval: 3000,
-            })
-        </script>
-
-        <!-- =============== SECTION DEAL =============== -->
-        <section class="padding-bottom">
-            <div class="card card-deal">
-                <div class="col-heading content-body">
-                    <div class="section">
-                        <h3 class="">Deals and offers</h3>
-                    </div>
-                    <!-- sect-heading -->
-                </div>
-                <!-- col.// -->
-                <div class="row no-gutters items-wrap">
-                    <div class="col-md col-6">
-                        <figure class="card-product-grid card-sm">
-                            <a href="#" class="img-wrap">
-                                <img src="{% static 'ecommerce/img/summer-dress.jpg' %}" style="padding-top:20px">
-                            </a>
-                            <div class="text-wrap p-3">
-                                <a href="#" class="title">Summer clothes</a>
-                                <span class="badge badge-success"> -20% </span>
-                            </div>
-                        </figure>
-                    </div>
-                    <!-- col.// -->
-                    <div class="col-md col-6">
-                        <figure class="card-product-grid card-sm">
-                            <a href="#" class="img-wrap">
-                                <img src="{% static 'ecommerce/img/Iron-image.png' %}" style="padding-top:20px">
-                            </a>
-                            <div class="text-wrap p-3">
-                                <a href="#" class="title">Electronics</a>
-                                <span class="badge badge-success"> -5% </span>
-                            </div>
-                        </figure>
-                    </div>
-                    <!-- col.// -->
-                    <div class="col-md col-6">
-                        <figure class="card-product-grid card-sm">
-                            <a href="#" class="img-wrap">
-                                <img src="{% static 'ecommerce/img/phone&accessories.jpg' %}" style="padding-top:20px">
-                            </a>
-                            <div class="text-wrap p-3">
-                                <a href="#" class="title">Mobile Accessories</a>
-                                <span class="badge badge-success"> -20% </span>
-                            </div>
-                        </figure>
-                    </div>
-                    <!-- col.// -->
-                    <div class="col-md col-6">
-                        <figure class="card-product-grid card-sm">
-                            <a href="#" class="img-wrap">
-                                <img src="{% static 'ecommerce/img/product-item-img.png' %}" style="padding-top:20px">
-                            </a>
-                            <div class="text-wrap p-3">
-                                <a href="#" class="title">Home apparel</a>
-                                <span class="badge badge-success"> -15% </span>
-                            </div>
-                        </figure>
-                    </div>
-                    <!-- col.// -->
-                    <div class="col-md col-6">
-                        <figure class="card-product-grid card-sm">
-                            <a href="#" class="img-wrap">
-                                <img src="{% static 'ecommerce/img/smartwatch.png' %}" style="padding-top:20px">
-                            </a>
-                            <div class="text-wrap p-3">
-                                <a href="#" class="title text-truncate">Smart watches</a>
-                                <span class="badge badge-success"> -10% </span>
-                            </div>
-                        </figure>
-                    </div>
-                    <!-- col.// -->
-                </div>
-            </div>
-            <!-- col.// -->
-            </div>
-            </div>
-
-        </section>
-        <!-- =============== SECTION DEAL // END =============== -->
-
-        <!-- =============== SECTION 1 =============== -->
-        <section class="padding-bottom">
-            <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Apparel</h4>
-            </header>
-
-            <div class="card card-home-category">
-                <div class="row no-gutters">
-                    <div class="col-md-3">
-                        <div class="home-category-banner bg-green">
-                            <h3 class="title text-light">Best trending clothes only for summer</h3>
-                            <br>
-                            <p class="text-light">View the best of collection of women's clothes and a wide range of electronic items </p>
-                            <a href="#" class="btn btn-light rounded-pill">Source now</a>
-                            <img src="{% static 'ecommerce/img/picc.jpg' %}" class="img-bg">
-                        </div>
-
-                    </div>
-                    <!-- col.// -->
-                    <div class="col-md-9">
-                        <ul class="row no-gutters bordered-cols">
-                            <li class="col-6 col-lg-3 col-md-4" style="height:250px">
-                                <a href="#" class="item">
-                                    <div class="card-body">
-                                        <h6 class="title">Women's Clothes with Trending collection </h6>
-                                        <img class="img-sm float-right" style="height: 220px" src="{% static 'ecommerce/img/women-jegging.jpg' %}">
-                                        <p class="text-muted"><i class="fa fa-map-marker"></i></p>
-
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="col-6 col-lg-3 col-md-4" style="height:250px">
-                                <a href="#" class="item">
-                                    <div class="card-body">
-                                        <h6 class="title">Trending collection </h6>
-                                        <img class="img-sm float-right" style="height: 220px" src="{% static 'ecommerce/img/Winter-jacket.jpg' %}" "> 
-                                            <p class="text-muted "><i class="fa fa-map-marker "></i> South Africa</p>
-
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="col-6 col-lg-3 col-md-4 " style="height:250px ">
-                                    <a href="# " class="item "> 
-                                        <div class="card-body ">
-                                            <h6 class="title ">Brand New Collection </h6>
-                                        <img class="img-sm float-right " style="height: 230px " src="{% static 'ecommerce/img/picc.jpg' %} "> 
-                                        <p class="text-muted "><i class="fa fa-map-marker "></i></p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="col-6 col-lg-3 col-md-4 " style="height:250px ">
-                                    <a href="# " class="item "> 
-                                        <div class="card-body ">
-                                            <h6 class="title ">Dress Collection  </h6>
+                                    <div class="card-banner border-bottom">
+                                        <div class="py-3" style="width:100%; height:1cm">
+                                            <h6 class="card-title">Home inventory</h6>
                                             
-                                            <img class="img-sm float-right " style="height: 220px " src="{% static 'ecommerce/img/body-dress.png' %} ">   
-                                            <p class="text-muted "><i class="fa fa-map-marker "></i></p>
+                                        </div> 
+                                        <img src="{% static 'ecommerce/img/Home-Inventory.png' %}" class="img-bg" height="80">
+										
+                                    </div>
+									<a href="/ecommerce/categories/home-kitchen" class="btn btn-secondary btn-sm"> Source now </a>
+
+                                </aside>
+                            </div> <!-- col.// -->
+                        </div> <!-- row.// -->
+
+                    </div> <!-- card-body.// -->
+                </main> <!-- card.// -->
+
+            </section>
+            <!-- ========================= SECTION MAIN END// ========================= -->
+            
+             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+            
+            
+            <script>
+                $('#myCarousel').carousel({
+                    interval: 3000,
+                })
+
+            </script>
+
+            <!-- =============== SECTION DEAL =============== -->
+            <section class="padding-bottom">
+                <div class="card card-deal">
+                    <div class="col-heading content-body">
+					
+                        <div class="section">
+                            <h3 class="">Deals and offers</h3>
+							
+                        </div><!-- sect-heading -->
+                    </div> <!-- col.// -->
+                    <div class="row no-gutters items-wrap">
+                        <div class="col-md col-6">
+                            <figure class="card-product-grid card-sm">
+                                <a href="#" class="img-wrap"> 
+                                    <img src="{% static 'ecommerce/img/summerclothes.jpg' %}" style="padding-top:20px"> 
+                                </a>
+                                <div class="text-wrap p-3">
+                                    <a href="#" class="title">Summer clothes</a>
+                                    <span class="badge badge-success"> -20% </span>
+                                </div>
+                            </figure>
+                        </div> <!-- col.// -->
+                        <div class="col-md col-6">
+                            <figure class="card-product-grid card-sm">
+                                <a href="#" class="img-wrap"> 
+                                    <img src="{% static 'ecommerce/img/electronics.jpg' %}" style="padding-top:20px"> 
+                                </a>
+                                <div class="text-wrap p-3">
+                                    <a href="#" class="title">Electronics</a>
+                                    <span class="badge badge-success"> -5% </span>
+                                </div>
+                            </figure>
+                        </div> <!-- col.// -->
+                        <div class="col-md col-6">
+                            <figure class="card-product-grid card-sm">
+                                <a href="#" class="img-wrap"> 
+                                    <img src="{% static 'ecommerce/img/mobile accessories.png' %}" style="padding-top:20px"> 
+                                </a>
+                                <div class="text-wrap p-3">
+                                    <a href="#" class="title">Mobile Accessories</a>
+                                    <span class="badge badge-success"> -20% </span>
+                                </div>
+                            </figure>
+                        </div> <!-- col.// -->
+                        <div class="col-md col-6">
+                            <figure class="card-product-grid card-sm">
+                                <a href="#" class="img-wrap"> 
+                                    <img src="{% static 'ecommerce/img/homeapparel.jpeg' %}" style="padding-top:20px"> 
+                                </a>
+                                <div class="text-wrap p-3">
+                                    <a href="#" class="title">Home apparel</a>
+                                    <span class="badge badge-success"> -15% </span>
+                                </div>
+                            </figure>
+                        </div> <!-- col.// -->
+                        <div class="col-md col-6">
+                            <figure class="card-product-grid card-sm">
+                                <a href="#" class="img-wrap"> 
+                                    <img src="{% static 'ecommerce/img/smartwatch.jpg' %}" style="padding-top:20px"> 
+                                </a>
+                                <div class="text-wrap p-3">
+                                    <a href="#" class="title text-truncate">Smart watches</a>
+                                    <span class="badge badge-success"> -10% </span>
+                                </div>
+                            </figure>
+                        </div> <!-- col.// -->
+                    </div>
+                </div>
+
+            </section>
+            <!-- =============== SECTION DEAL // END =============== -->
+
+            <!-- =============== SECTION 1 =============== -->
+            <section class="padding-bottom">
+                <header class="section-heading heading-line">
+                    <h4 class="title-section text-uppercase">Apparel</h4>
+                </header>
+
+                <div class="card card-home-category">
+                    <div class="row no-gutters">
+                        <div class="col-md-3">
+                            <div class="home-category-banner bg-green">
+                                <h3 class="title text-light">Best trending clothes only for summer</h3>
+                                <br>
+                                <p class="text-light">View the best of collection of women's clothes and a wide range of electronic items </p>
+                                <a href="/ecommerce/categories/women" class="btn btn-light rounded-pill">Source now</a>
+                                <img src="{% static 'ecommerce/img/women clothes1.jpeg' %}" class="img-bg">
+                            </div>
+
+                        </div> <!-- col.// -->
+                        <div class="col-md-9">
+                            <ul class="row no-gutters bordered-cols">
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Women's Clothes with Trending collection  </h6>
+                                            <img class="img-sm float-right" style="height: 220px" src="{% static 'ecommerce/img/women clothes trend.jpg' %}">
+                                            <p class="text-muted"><i class="fa fa-map-marker"></i> South Africa</p>
+
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Trending collection  </h6>
+                                            <img class="img-sm float-right" style="height: 220px" src="{% static 'ecommerce/img/trending.png' %}""> 
+                                            <p class="text-muted"><i class="fa fa-map-marker"></i> South Africa</p>
+
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Brand New Collection </h6>
+                                        <img class="img-sm float-right" style="height: 220px" src="{% static 'ecommerce/img/brandnew.jpg' %}"> 
+                                        <p class="text-muted"><i class="fa fa-map-marker"></i> South Africa</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Dress Collection  </h6>
+                                            
+                                            <img class="img-sm float-right" style="height: 220px" src="{% static 'ecommerce/img/dress.jpg' %}">   
+                                            <p class="text-muted"><i class="fa fa-map-marker"></i> South Africa</p>
                                         </div>
                                     </a>	
                                 </li>
-                                <li class="col-6 col-lg-3 col-md-4 " style="height:250px ">
-                                    <a href="# " class="item "> 
-                                        <div class="card-body ">
-                                            <h6 class="title ">Home &amp; Kitchen Collection  </h6>
-                                            <img class="img-sm float-right " style="width:250px; height: 220px " src="{% static 'ecommerce/img/kitchen-appliance-png-2.png' %} "> 
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Home &amp; Kitchen Collection  </h6>
+                                            <img class="img-sm float-right" style="width:250px; height: 220px" src="{% static 'ecommerce/img/kitchen2.jpg' %}"> 
 
                                         </div>
                                     </a>
                                 </li>
-                                <li class="col-6 col-lg-3 col-md-4 " style="height:250px ">
-                                    <a href="# " class="item "> 
-                                        <div class="card-body ">
-                                            <h6 class="title ">Home &amp; Kitchen Collection  </h6>
-                                            <img class="img-sm float-right " style="width:240px; height: 220px " src="{% static 'ecommerce/img/4+Slice+Toaster.jpg' %} "> 
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Home &amp; Kitchen Collection  </h6>
+                                            <img class="img-sm float-right" style="width:240px; height: 220px" src="{% static 'ecommerce/img/kitchen.jpg' %}"> 
 
                                         </div>
                                     </a>
                                 </li>
-                                <li class="col-6 col-lg-3 col-md-4 " style="height:250px ">
-                                    <a href="# " class="item "> 
-                                        <div class="card-body ">
-                                            <h6 class="title ">Home &amp; Dinning Items</h6>
-                                            <img class="img-sm float-right " style="width:240px; height: 220px " src="{% static 'ecommerce/img/loading.gif' %} "> 
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Home &amp; Dinning Items</h6>
+                                            <img class="img-sm float-right" style="width:240px; height: 220px" src="{% static 'ecommerce/img/dining.jpg' %}"> 
 
 
                                         </div>
                                     </a>
                                 </li>
-                                <li class="col-6 col-lg-3 col-md-4 " style="height:250px ">
-                                    <a href="# " class="item "> 
-                                        <div class="card-body ">
-                                            <h6 class="title ">Home Interior &amp; kitchen Collection   </h6>
-                                            <img class="img-sm float-right " style="width:240px; height: 220px " src="{% static 'ecommerce/img/' %} "">
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Home Interior &amp; kitchen Collection   </h6>
+                                            <img class="img-sm float-right" style="width:240px; height: 220px" src="{% static 'ecommerce/img/home and kitchen.jpg' %}""> 
 
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- col.// -->
-                </div>
-                <!-- row.// -->
-            </div>
-            <!-- card.// -->
-        </section>
-        <!-- =============== SECTION 1 END =============== -->
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div> <!-- col.// -->
+                    </div> <!-- row.// -->
+                </div> <!-- card.// -->
+            </section>
+            <!-- =============== SECTION 1 END =============== -->
 
-        <!-- =============== SECTION 2 =============== -->
-        <section class="padding-bottom">
-            <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Electronics</h4>
-            </header>
+            <!-- =============== SECTION 2 =============== -->
+            <section class="padding-bottom">
+                <header class="section-heading heading-line">
+                    <h4 class="title-section text-uppercase">Electronics</h4>
+                </header>
 
-            <div class="card card-home-category">
-                <div class="row no-gutters">
-                    <div class="col-md-3">
+                <div class="card card-home-category">
+                    <div class="row no-gutters">
+                        <div class="col-md-3">
 
-                        <div class="home-category-banner bg-light-orange">
-                            <h3 class="title text-light">Electronics items from good brands</h3>
-                            <br>
-                            <p class="text-light">Get the best and trusted electronic gadgets from a variety of brands</p>
-                            <a href="#" class="btn btn-light rounded-pill">Source now</a>
-                            <img src="{% static 'ecommerce/img/hadpone1.jpeg' %}" class="img-bg">
-                        </div>
+                            <div class="home-category-banner bg-light-orange">
+                                <h3 class="title text-light">Electronics items from good brands</h3>
+                                <br>
+                                <p class="text-light">Get the best and trusted electronic gadgets from a variety of brands</p>
+                                <a href="/ecommerce/categories/electronics" class="btn btn-light rounded-pill">Source now</a>
+                                <img src="{% static 'ecommerce/img/banner.jpg' %}" class="img-bg">
+                            </div>
 
-                    </div>
-                    <!-- col.// -->
-                    <div class="col-md-9">
-                        <ul class="row no-gutters bordered-cols">
-                            <li class="col-6 col-lg-3 col-md-4" style="height:250px">
-                                <a href="#" class="item">
-                                    <div class="card-body">
-                                        <h6 class="title">Get the latest Samsung Galaxy </h6>
-                                        <img class="img-sm float-right" style="height: 180px" src="{% static 'ecommerce/img/S20- Samsung.png' %}">
-                                        <p class="text-muted">Samsung</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="col-6 col-lg-3 col-md-4" style="height:250px">
-                                <a href="#" class="item">
-                                    <div class="card-body">
-                                        <h6 class="title">Samsung Freezer with Touchpad </h6>
-                                        <img class="img-sm float-right" style="width:100px; height: 180px" src="{% static 'ecommerce/img/electronics-img.png' %}">
-
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="col-6 col-lg-3 col-md-4" style="height:250px">
-                                <a href="#" class="item">
-                                    <div class="card-body">
-                                        <h6 class="title">32" HD TV Samsung, LG &amp; Sony </h6>
-                                        <img class="img-sm float-right" style="width:200px; height: 150px" src="{% static 'ecommerce/img/product-img-11.jpg' %}">
-
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="col-6 col-lg-3 col-md-4" style="height:250px">
-                                <a href="#" class="item">
-                                    <div class="card-body">
-                                        <h6 class="title">Hp Desktops </h6>
-                                        <img class="img-sm float-right" style="width:200px; height: 150px" src="{% static 'ecommerce/img/product-img-11-0.png' %}">
-
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="col-6 col-lg-3 col-md-4" style="height:250px">
-                                <a href="#" class="item">
-                                    <div class="card-body">
-                                        <h6 class="title"> HP Printers </h6>
-                                        <img class="img-sm float-right" style="width:200px; height: 150px" src="{% static 'ecommerce/img/product-image-5.png' %}">
-
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="col-6 col-lg-3 col-md-4" style="height:250px">
-                                <a href="#" class="item">
-                                    <div class="card-body">
-                                        <h6 class="title">New Samsung Tab S7 </h6>
-                                        <img class="img-sm float-right" style="width:200px; height: 170px" src="{% static 'ecommerce/img/product-img-19.jpeg' %}">
-
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="col-6 col-lg-3 col-md-4" style="height:250px">
-                                <a href="#" class="item">
-                                    <div class="card-body">
-                                        <h6 class="title">Philips Steam iron </h6>
-                                        <img class="img-sm float-right" style="width:200px; height: 150px" src="{% static 'ecommerce/img/Iron-image.png' %}">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="col-6 col-lg-3 col-md-4" style="height:250px">
-                                <a href="#" class="item">
-                                    <div class="card-body">
-                                        <h6 class="title">Samsung 800W Microwave Oven </h6>
-                                        <img class="img-sm float-right" style="width:200px; height: 150px" src="{% static 'ecommerce/img/microwave oven-img.jpg' %}">
-
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- col.// -->
-                </div>
-                <!-- row.// -->
-            </div>
-            <!-- card.// -->
-        </section>
-        <!-- =============== SECTION 2 END =============== -->
+                        </div> <!-- col.// -->
+                        <div class="col-md-9">
+                            <ul class="row no-gutters bordered-cols">
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Get the latest Samsung Galaxy  </h6>
+                                            <img class="img-sm float-right" style="height: 200px" src="{% static 'ecommerce/img/samsung-s10.jpg' %}"> 
+                                           <p class="text-muted">Samsung Gslaxy S10, S10+ S10e</p>
+                                        </div>
+                                    </a>
+                                </li> 
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Samsung Freezer with Touchpad  </h6>
+                                            <img class="img-sm float-right" style="width:100px; height: 180px" src="{% static 'ecommerce/img/freezer.jpg' %}"> 
+                                             
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">32" HD TV Samsung, LG &amp; Sony  </h6>
+                                            <img class="img-sm float-right" style="width:200px; height: 150px" src="{% static 'ecommerce/img/samsungtv.jpeg' %}"> 
+                                            
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Hp Desktops  </h6>
+                                            <img class="img-sm float-right" style="width:200px; height: 150px" src="{% static 'ecommerce/img/Desktop-Computer.jpg' %}">
+                                           
+                                        </div>
+                                    </a>	
+                                </li>
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title"> HP Printers </h6>
+                                            <img class="img-sm float-right" style="width:200px; height: 150px" src="{% static 'ecommerce/img/printer.png' %}"> 
+                                            
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">New Samsung Tab S7  </h6>
+                                            <img class="img-sm float-right" style="width:200px; height: 170px" src="{% static 'ecommerce/img/tab72.jpg' %}"> 
+                                            
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Philips Steam iron </h6>
+                                            <img class="img-sm float-right" style="width:200px; height: 150px" src="{% static 'ecommerce/img/phillip iron.webp' %}"> 
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-6 col-lg-3 col-md-4" style="height:250px">
+                                    <a href="#" class="item"> 
+                                        <div class="card-body">
+                                            <h6 class="title">Samsung 800W Microwave Oven </h6>
+                                            <img class="img-sm float-right" style="width:200px; height: 150px" src="{% static 'ecommerce/img/microwave oven-img.jpg' %}"> 
+                                            
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div> <!-- col.// -->
+                    </div> <!-- row.// -->
+                </div> <!-- card.// -->
+            </section>
+            <!-- =============== SECTION 2 END =============== -->
 
 
-        <!-- =============== SECTION REQUEST =============== -->
+            <!-- =============== SECTION REQUEST =============== -->
 
-        <section class="padding-bottom">
+            <section class="padding-bottom">
 
-            <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Request for Quotation</h4>
-            </header>
+                <header class="section-heading heading-line">
+                    <h4 class="title-section text-uppercase">Request for Quotation</h4>
+                </header>
 
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="card-banner banner-quote overlay-gradient" style="background-image: url('resources/images/product-item-img.jpg');">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card-banner banner-quote overlay-gradient" style="background-image: url('{% static 'ecommerce/img/lights.jpg' %}');">
                         <div class="card-img-overlay white">
                             <h3 class="card-title">An easy way to send request to suppliers</h3>
-                            <p class="card-text" style="max-width: 400px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                            <a href="" class="btn btn-light rounded-pill">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- col // -->
-                <div class="col-md-4">
-
-                    <div class="card card-body">
-                        <h4 class="title py-3">One Request, Multiple Quotes</h4>
-                        <form>
-                            <div class="form-group">
-                                <input class="form-control" name="" placeholder="What are you looking for?" type="text">
+                            <p class="card-text" style="max-width: 400px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt.</p>
+                                <a href="" class="btn btn-light rounded-pill">Learn more</a>
                             </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input class="form-control" placeholder="Quantity" name="" type="text">
+                        </div>
+                    </div> <!-- col // -->
+                    <div class="col-md-4">
 
-                                    <select class="custom-select form-control">
+                        <div class="card card-body">
+                            <h4 class="title py-3">One Request, Multiple Quotes</h4>
+                            <form>
+                                <div class="form-group">
+                                    <input class="form-control" name="" placeholder="What are you looking for?" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="Quantity" name="" type="text">
+
+                                        <select class="custom-select form-control">
                                             <option>Pieces</option>
                                             <option>Litres</option>
                                             <option>Tons</option>
                                             <option>Gramms</option>
                                         </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group text-muted">
-                                <p>Select template type:</p>
-                                <label class="form-check form-check-inline">
+                                <div class="form-group text-muted">
+                                    <p>Select template type:</p>
+                                    <label class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" value="option1">
                                         <span class="form-check-label">Request price</span>
                                     </label>
-                                <label class="form-check form-check-inline">
+                                    <label class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" value="option2">
                                         <dspaniv class="form-check-label">Request a sample
                                     </dspaniv></label>
-                            </div>
-                            <div class="form-group">
-                                <button class="btn btn-warning">Request for quote</button>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-                <!-- col // -->
-            </div>
-            <!-- row // -->
-        </section>
-
-        <!-- =============== SECTION REQUEST .//END =============== -->
-
-
-        <!-- =============== SECTION ITEMS =============== -->
-        <section class="padding-bottom-sm">
-
-            <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Recommended items</h4>
-            </header>
-
-            <div class="row row-sm">
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/camera-transparent.png' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title">Stylish Nikon Camera</a>
-                            <div class="price mt-1">$179.00</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/S20- Samsung.png' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title">Samsung Galaxy S20</a>
-                            <div class="price mt-1">$</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/game-console.jpg' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title">New PlayStation 5 </a>
-                            <div class="price mt-1">$</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/tab-let-image.jpeg' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title">Apple Ipad Mini</a>
-                            <div class="price mt-1">$179.00</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/hadpone1.jpeg' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"> Wireless Headphones</a>
-                            <div class="price mt-1">$</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/laptop-img (5).png' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title">Hp Pro-Book Laptop</a>
-                            <div class="price mt-1">$280.00</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/product-img-17.jpg' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title">Wireless Router</a>
-                            <div class="price mt-1">$56.00</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/ear-pods.jpg' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title">Earpods</a>
-                            <div class="price mt-1">$179.00</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/Samsung-Freezer.jpeg' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"></a>
-                            <div class="price mt-1">Sumsung-fridge</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/smartwatch.png' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title">Smart Watch</a>
-                            <div class="price mt-1">$179.00</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/earphone1.jpeg' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title">Earphones</a>
-                            <div class="price mt-1">$280.00</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                    <div class="card card-sm card-product-grid">
-                        <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/portable-bluetooth-speaker.jpg' %}" style="padding-top:15px"> </a>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title">Portable Bluetooth Speaker </a>
-                            <div class="price mt-1">$56.00</div>
-                            <!-- price-wrap.// -->
-                        </figcaption>
-                    </div>
-                </div>
-                <!-- col.// -->
-            </div>
-            <!-- row.// -->
-        </section>
-        <!-- =============== SECTION ITEMS .//END =============== -->
-
-
-        <div class="py-5 text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2>Modern Business: A Clean & Simple Mall Located in Harare</h2>
-                        <p>Joina City’s modern architecture provides shoppers and visitors an authentic “Hararian experience” unlike anywhere else in this vibrant welcoming city..</p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="py-5">
-            <div class="container">
-                <h2 class="text-center">Featured Products</h2>
-                <hr>
-                <div class="row">
-                    {% for item in products %}
-                    <div class='col-md-3 col-sm-6 mb-3'>
-                        <div class='card'>
-                            <div class='card-body p-0'>
-                                <a href="{% url 'ecommerce:single_product' item.id %}">
-                                    <img src="https://picsum.photos/g/700/450/?random" width='100%' class='img-responsive'>
-                                </a>
-                                <div class='list-group list-group-flush'>
-                                    <div class='list-group-item border-top-0 py-2'>
-                                        <i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
-                                        <p class='list-group-item-text mb-0'>Price</p>
-                                        <h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
-                                    </div>
-                                    <div class='list-group-item py-2'>
-                                        <i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
-                                        <p class='list-group-item-text mb-0'>On Stock</p>
-                                        <h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div class="py-5">
-            <div class="container">
-                <h2 class="text-center">Shop By Category</h2>
-                <hr>
-                <div class="row">
-                    {% for item in products %}
-                    <div class='col-md-3 col-sm-6 mb-3'>
-                        <div class='card'>
-                            <div class='card-body p-0'>
-                                <a href="{% url 'ecommerce:single_product' item.id %}">
-                                    <img src="https://picsum.photos/seed/picsum/200/300" width='100%' class='img-responsive'>
-                                </a>
-                                <div class='list-group list-group-flush'>
-                                    <div class='list-group-item border-top-0 py-2'>
-                                        <i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
-                                        <p class='list-group-item-text mb-0'>Price</p>
-                                        <h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
-                                    </div>
-                                    <div class='list-group-item py-2'>
-                                        <i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
-                                        <p class='list-group-item-text mb-0'>On Stock</p>
-                                        <h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
-                                    </div>
+                                <div class="form-group">
+                                    <button class="btn btn-warning">Request for quote</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div class="py-5">
-            <div class="container">
-                <h2 class="text-center">Black Friday Specials</h2>
-                <hr>
-                <div class="row">
-                    {% for item in products %}
-                    <div class='col-md-3 col-sm-6 mb-3'>
-                        <div class='card'>
-                            <div class='card-body p-0'>
-                                <a href="{% url 'ecommerce:single_product' item.id %}">
-                                    <img src="https://picsum.photos/g/700/450/?random" width='100%' class='img-responsive'>
-                                </a>
-                                <div class='list-group list-group-flush'>
-                                    <div class='list-group-item border-top-0 py-2'>
-                                        <i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
-                                        <p class='list-group-item-text mb-0'>Price</p>
-                                        <h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
-                                    </div>
-                                    <div class='list-group-item py-2'>
-                                        <i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
-                                        <p class='list-group-item-text mb-0'>On Stock</p>
-                                        <h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
-                                    </div>
-                                </div>
-                            </div>
+
+                    </div> <!-- col // -->
+                </div> <!-- row // -->
+            </section>
+
+            <!-- =============== SECTION REQUEST .//END =============== -->
+
+
+            <!-- =============== SECTION ITEMS =============== -->
+            <section class="padding-bottom-sm">
+
+                <header class="section-heading heading-line">
+                    <h4 class="title-section text-uppercase">Recommended items</h4>
+                </header>
+
+                <div class="row row-sm">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/cameran.jpg' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Stylish Nikon Camera</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </figcaption>
                         </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-        <div class="py-5">
-            <div class="container">
-                <h2 class="text-center">Christmas offers</h2>
-                <hr>
-                <div class="row">
-                    {% for item in products %}
-                    <div class='col-md-3 col-sm-6 mb-3'>
-                        <div class='card'>
-                            <div class='card-body p-0'>
-                                <a href="{% url 'ecommerce:single_product' item.id %}">
-                                    <img src="https://picsum.photos/g/700/450/?random" width='100%' class='img-responsive'>
-                                </a>
-                                <div class='list-group list-group-flush'>
-                                    <div class='list-group-item border-top-0 py-2'>
-                                        <i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
-                                        <p class='list-group-item-text mb-0'>Price</p>
-                                        <h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
-                                    </div>
-                                    <div class='list-group-item py-2'>
-                                        <i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
-                                        <p class='list-group-item-text mb-0'>On Stock</p>
-                                        <h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
-                                    </div>
-                                </div>
-                            </div>
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/phonenew.jpg' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Samsung Galaxy S20</a>
+                                <div class="price mt-1">$200</div> <!-- price-wrap.// -->
+                            </figcaption>
                         </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div class="py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <h2>Joina CIty</h2>
-                        <p></p>
-                        Joina City is the 3rd tallest building in Zimbabwe standing at 105 metres. It is owned by Masawara Investments. The building has the single largest lift and escalator installation in Zimbabwe. Construction started in 1998 but was halted due economic crisis
-                        that was plaguing Zimbabwe.
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6"><img src="{% static '/ecommerce/img/maxresdefault.jpg' %}" class="w-100"></div>
-                </div>
-            </div>
-        </div>
-        <div class="py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6"><img src="{% static '/ecommerce/img/maxresdefault.jpg' %}" class="w-100"></div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <h2>Joina Digital</h2>
-                        <p></p>
-                        Leading the Digitization of Harare in designing a smart and state of the art modern building right in the heart of Harare
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- =============== SECTION SERVICES =============== -->
-        <section class="padding-bottom">
-
-            <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Trade services</h4>
-            </header>
-
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="center"></div>
-                    <article class="card card-post">
-                        <img src="{% static 'ecommerce/img/trade-insurance.jpeg' %}" class="card-img-top">
-                        <div class="card-body">
-                            <h6 class="title">Trade Assurance</h6>
-                            <p class="small text-uppercase text-muted">Order protection</p>
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/playstation.jpg' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">New PlayStation 5 </a>
+                                <div class="price mt-1">$200</div> <!-- price-wrap.// -->
+                            </figcaption>
                         </div>
-                    </article>
-                    <!-- card.// -->
-                </div>
-                <!-- col.// -->
-                <div class="col-md-3 col-sm-6">
-                    <article class="card card-post">
-                        <img src="{% static 'ecommerce/img/payment-tech.jpg' %}" class="card-img-top">
-                        <div class="card-body">
-                            <h6 class="title">Pay anytime</h6>
-                            <p class="small text-uppercase text-muted">Finance solution</p>
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/ipad.jpg' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Apple Ipad Mini</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </figcaption>
                         </div>
-                    </article>
-                    <!-- card.// -->
-                </div>
-                <!-- col.// -->
-                <div class="col-md-3 col-sm-6">
-                    <article class="card card-post">
-                        <img src="{% static 'ecommerce/img/inspection.jpg' %}" class="card-img-top">
-                        <div class="card-body">
-                            <h6 class="title">Inspection solution</h6>
-                            <p class="small text-uppercase text-muted">Easy Inspection</p>
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/wheadphones.jpg' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title"> Wireless Headphones</a>
+                                <div class="price mt-1">$50</div> <!-- price-wrap.// -->
+                            </figcaption>
                         </div>
-                    </article>
-                    <!-- card.// -->
-                </div>
-                <!-- col.// -->
-                <div class="col-md-3 col-sm-6">
-                    <article class="card card-post">
-                        <img src="{% static 'ecommerce/img/freight.jpg' %}" class="card-img-top">
-                        <div class="card-body">
-                            <h6 class="title">Ocean and Air Shipping</h6>
-                            <p class="small text-uppercase text-muted">Logistic services</p>
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/hplaptop.jpg' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Hp Pro-Book Laptop</a>
+                                <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
+                            </figcaption>
                         </div>
-                    </article>
-                    <!-- card.// -->
-                </div>
-                <!-- col.// -->
-            </div>
-            <!-- row.// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/wrouter.jpg' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Wireless Router</a>
+                                <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </div>
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/earpods.webp' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Earpods</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </div>
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/microwave.jpeg' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Microwave</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </div>
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/smartwatch.png' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Smart Watch</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </div>
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/freezer.jpg' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Freezer</a>
+                                <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </div>
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="card card-sm card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{% static 'ecommerce/img/portablespeaker.jpg' %}" style="padding-top:15px"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Portable Bluetooth Speaker </a>
+                                <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </div>
+                    </div> <!-- col.// -->
+                </div> <!-- row.// -->
+            </section>
+            <!-- =============== SECTION ITEMS .//END =============== -->
 
-        </section>
-        <!-- =============== SECTION SERVICES .//END =============== -->
 
-        <!-- =============== SECTION REGION =============== -->
-        <section class="padding-bottom">
+       	<div class="py-5 text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Modern Business: A Clean & Simple Mall Located in Harare</h2>
+					<p>Joina City’s modern architecture provides shoppers and visitors an authentic “Hararian experience” unlike anywhere else in this vibrant welcoming city..</p>
+					<hr>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="py-5">
+		<div class="container">
+			<h2 class="text-center">Featured Products</h2>
+			<hr>
+			<div class="row">
+				{% for item in products %}
+					<div class='col-md-3 col-sm-6 mb-3'>
+						<div class='card'>
+							<div class='card-body p-0'>
+								<a href="{% url 'ecommerce:single_product' item.id %}">
+									<img src="{% static 'ecommerce/img/product.png' %}" width='100%' class='img-responsive'>
+								</a>
+								<div class='list-group list-group-flush'>
+									<div class='list-group-item border-top-0 py-2'>
+										<i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>Price</p>
+										<h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
+									</div>
+									<div class='list-group-item py-2'>
+										<i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>On Stock</p>
+										<h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
+									</div>
+								</div>
+							</div> 
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="py-5">
+		<div class="container">
+			<h2 class="text-center">Shop By Category</h2>
+			<hr>
+			<div class="row">
+				{% for item in products %}
+					<div class='col-md-3 col-sm-6 mb-3'>
+						<div class='card'>
+							<div class='card-body p-0'>
+								<a href="{% url 'ecommerce:single_product' item.id %}">
+									<img src="{% static 'ecommerce/img/product.png' %}" width='100%' class='img-responsive'>
+								</a>
+								<div class='list-group list-group-flush'>
+									<div class='list-group-item border-top-0 py-2'>
+										<i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>Price</p>
+										<h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
+									</div>
+									<div class='list-group-item py-2'>
+										<i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>On Stock</p>
+										<h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
+									</div>
+								</div>
+							</div> 
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="py-5">
+		<div class="container">
+			<h2 class="text-center">Black Friday Specials</h2>
+			<hr>
+			<div class="row">
+				{% for item in products %}
+					<div class='col-md-3 col-sm-6 mb-3'>
+						<div class='card'>
+							<div class='card-body p-0'>
+								<a href="{% url 'ecommerce:single_product' item.id %}">
+									<img src="{% static 'ecommerce/img/product.png' %}" width='100%' class='img-responsive'>
+								</a>
+								<div class='list-group list-group-flush'>
+									<div class='list-group-item border-top-0 py-2'>
+										<i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>Price</p>
+										<h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
+									</div>
+									<div class='list-group-item py-2'>
+										<i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>On Stock</p>
+										<h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
+									</div>
+								</div>
+							</div> 
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="py-5">
+		<div class="container">
+			<h2 class="text-center">Christmas offers</h2>
+			<hr>
+			<div class="row">
+				{% for item in products %}
+					<div class='col-md-3 col-sm-6 mb-3'>
+						<div class='card'>
+							<div class='card-body p-0'>
+								<a href="{% url 'ecommerce:single_product' item.id %}">
+									<img src="{% static 'ecommerce/img/product.png' %}" width='100%' class='img-responsive'>
+								</a>
+								<div class='list-group list-group-flush'>
+									<div class='list-group-item border-top-0 py-2'>
+										<i class='fa fa-shopping-cart fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>Price</p>
+										<h4 class='list-group-item-heading'>{{ currency }} {{ item.price|intcomma }}</h4>
+									</div>
+									<div class='list-group-item py-2'>
+										<i class='fa fa-cubes fa-2x pr-3 pt-3 float-left'></i>
+										<p class='list-group-item-text mb-0'>On Stock</p>
+										<h4 class='list-group-item-heading'>{{ item.quantity }}</h4>
+									</div>
+								</div>
+							</div> 
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					<h2>Joina CIty</h2>
+					<p></p>
+					Joina City is the 3rd tallest building in Zimbabwe standing at 105 metres. It is owned by Masawara Investments. The building has the single largest lift and escalator installation in Zimbabwe. Construction started in 1998 but was halted due economic crisis that was plaguing Zimbabwe.
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6"><img src="{% static '/ecommerce/img/joinabanner.jpg' %}" class="w-100"></div>
+			</div>
+		</div>
+	</div>
+	<div class="py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6"><img src="{% static '/ecommerce/img/joinanew.jpg' %}" class="w-100"></div>
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					<h2>Joina Digital</h2>
+					<p></p>
+					Leading the Digitization of Harare in designing a smart and state of the art modern building right in the heart of Harare 
+				</div>
+			</div>
+		</div>
+	</div>
+	     <!-- =============== SECTION SERVICES =============== -->
+		 <style>
+		 #tradesrvices {
+		 height:7cm
+		 
+		 }
+		 
+		 </style>
+		 <section class="padding-bottom">
 
-            <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Choose Your region</h4>
-            </header>
+			<header class="section-heading heading-line">
+				<h4 class="title-section text-uppercase">Trade services</h4>
+			</header>
 
-            <ul class="row mt-4">
-                <li class="col-md col-6">
-                    <a href="#" class="icontext"> <img class="icon-flag-sm" src="https://cdn.countryflags.com/thumbs/tanzania/flag-400.png"> <span>Tanzania</span> </a>
-                </li>
-                <li class="col-md col-6">
-                    <a href="#" class="icontext"> <img class="icon-flag-sm" src="https://www.countryflags.com/wp-content/uploads/south-africa-flag-png-large.png"> <span>South Africa</span> </a>
-                </li>
-                <li class="col-md col-6">
-                    <a href="#" class="icontext"> <img class="icon-flag-sm" src="https://cdn.countryflags.com/thumbs/namibia/flag-400.png"> <span>Namibia</span> </a>
-                </li>
+			<div class="row">
+				<div class="col-md-3 col-sm-6" id="tradesrvices">
+					<article class="card card-post" id="tradesrvices">
+						<img src="{% static 'ecommerce/img/trade-insurance.jpeg' %}" class="card-img-top">
+						<div class="card-body" id="tradesrvices">
+							<h6 class="title">Trade Assurance</h6>
+							<p class="small text-uppercase text-muted">Order protection</p>
+						</div>
+					</article> <!-- card.// -->
+				</div> <!-- col.// -->
+				<div class="col-md-3 col-sm-6" id="tradesrvices">
+					<article class="card card-post" id="tradesrvices">
+						<img src="{% static 'ecommerce/img/payment2.jpeg' %}" class="card-img-top">
+						<div class="card-body" id="tradesrvices">
+							<h6 class="title">Pay anytime</h6>
+							<p class="small text-uppercase text-muted">Finance solution</p>
+						</div>
+					</article> <!-- card.// -->
+				</div> <!-- col.// -->
+				<div class="col-md-3 col-sm-6" id="tradesrvices">
+					<article class="card card-post" id="tradesrvices">
+						<img src="{% static 'ecommerce/img/inspection2.jpg' %}" class="card-img-top">
+						<div class="card-body" id="tradesrvices">
+							<h6 class="title">Inspection solution</h6>
+							<p class="small text-uppercase text-muted">Easy Inspection</p>
+						</div>
+					</article> <!-- card.// -->
+				</div> <!-- col.// -->
+				<div class="col-md-3 col-sm-6" id="tradesrvices">
+					<article class="card card-post" id="tradesrvices">
+						<img src="{% static 'ecommerce/img/Air-freight-Vs-Sea-freight-1.png' %}"	 class="card-img-top" style="height:6cm;">
+						<div class="card-body" id="tradesrvices">
+							<h6 class="title">Ocean and Air Shipping</h6>
+							<p class="small text-uppercase text-muted">Logistic services</p>
+						</div>
+					</article> <!-- card.// -->
+				</div> <!-- col.// -->
+			</div> <!-- row.// -->
 
-                <li class="col-md col-6">
-                    <a href="#" class="icontext"> <img class="icon-flag-sm" src="https://cdn.countryflags.com/thumbs/egypt/flag-400.png"> <span>Egypt</span> </a>
-                </li>
-                <li class="col-md col-6">
-                    <a href="#" class="icontext"> <img class="icon-flag-sm" src="https://cdn.countryflags.com/thumbs/mozambique/flag-400.png"> <span>Mozambique</span> </a>
-                </li>
-                <li class="col-md col-6">
-                    <a href="#" class="icontext"> <i class="mr-3 fa fa-ellipsis-h"></i> <span>More regions</span> </a>
-                </li>
-            </ul>
-        </section>
-        <!-- =============== SECTION REGION .//END =============== -->
-        <!-- <div class="container">
+		</section>
+		<!-- =============== SECTION SERVICES .//END =============== -->
+
+		<!-- =============== SECTION REGION =============== -->
+		<section class="padding-bottom">
+
+			<header class="section-heading heading-line">
+				<h4 class="title-section text-uppercase">Choose Your region</h4>
+			</header>
+
+			<ul class="row mt-4">
+				<li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="https://cdn.countryflags.com/thumbs/tanzania/flag-400.png"> <span>Tanzania</span> </a></li>
+				<li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="https://www.countryflags.com/wp-content/uploads/south-africa-flag-png-large.png"> <span>South Africa</span> </a></li>
+				<li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="https://cdn.countryflags.com/thumbs/namibia/flag-400.png"> <span>Namibia</span> </a></li>
+			
+				<li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="https://cdn.countryflags.com/thumbs/egypt/flag-400.png"> <span>Egypt</span> </a></li>
+				<li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="https://cdn.countryflags.com/thumbs/mozambique/flag-400.png"> <span>Mozambique</span> </a></li>
+				<li class="col-md col-6"><a href="#" class="icontext"> <i class="mr-3 fa fa-ellipsis-h"></i> <span>More regions</span> </a></li>
+			</ul>
+		</section>
+		<!-- =============== SECTION REGION .//END =============== -->
+		<!-- <div class="container">
 			<h1 class="text-center">
 				Client Testimonials
 			</h1>
@@ -6717,280 +6774,256 @@ any other head content must come *after* these tags --><meta name="description" 
 							<span class="post">Mobile Phones Shopper</span>
 						</div></div></div></div> -->
 
+						
+
+						
+
+						
+					<div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div></div>
+				</div>
+			</div>
+		</div>
+		<article class="my-4 container">
+			<img src="http://196.43.100.35:8080/joina-online/resources/images/banner-3232.jpg" class="w-100">
+		</article>
+	</div>  
+	<!-- container end.// -->
+
+	<!-- ========================= SECTION SUBSCRIBE  ========================= -->
+	<section class="section-subscribe padding-y-lg">
+		<div class="container">
+
+			<p class="pb-2 text-center text-white">Delivering the latest product trends and industry news straight to your inbox</p>
+
+			<div class="row justify-content-md-center">
+				<div class="col-lg-5 col-md-6">
+					<form class="form-row">
+						<div class="col-md-8 col-7">
+							<input class="form-control border-0" placeholder="Your Email" type="email">
+						</div> <!-- col.// -->
+						<div class="col-md-4 col-5">
+							<button type="submit" class="btn btn-block btn-light"> <i class="fa fa-envelope"></i> Subscribe </button>
+						</div> <!-- col.// -->
+					</form>
+					<small class="form-text text-white-50">We'll never share your email address with a third-party. </small>
+				</div> <!-- col-md-6.// -->
+			</div>
 
 
+		</div>
+	</section>
+
+	<script>
+		$('.main-carousel').owlCarousel({
+			loop: true,
+			margin: 0,
+			nav: true,
+			dots: false,
+			autoplayHoverPause: false,
+			autoplay: 5000,
+			smartSpeed: 700,
+			navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
+			responsive: {
+				0: {
+					items: 1
+				},
+				600: {
+					items: 1
+				},
+				760: {
+					items: 1,
+					nav: false
+				},
+				1024: {
+					items: 1
+				},
+				1100: {
+					items: 1
+				}
+			}
+		});
+	</script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
 
 
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 
-        <div class="owl-controls clickable">
-            <div class="owl-pagination">
-                <div class="owl-page active"><span class=""></span></div>
-                <div class="owl-page"><span class=""></span></div>
-            </div>
-        </div>
-        </div>
-        </div>
-</div>
-</div>
-<article class="my-4 container">
-    <img src="http://196.43.100.35:8080/joina-online/resources/images/banner-3232.jpg" class="w-100">
-</article>
-</div>
-<!-- container end.// -->
-
-<!-- ========================= SECTION SUBSCRIBE  ========================= -->
-<section class="section-subscribe padding-y-lg">
-    <div class="container">
-
-        <p class="pb-2 text-center text-white">Delivering the latest product trends and industry news straight to your inbox</p>
-
-        <div class="row justify-content-md-center">
-            <div class="col-lg-5 col-md-6">
-                <form class="form-row">
-                    <div class="col-md-8 col-7">
-                        <input class="form-control border-0" placeholder="Your Email" type="email">
-                    </div>
-                    <!-- col.// -->
-                    <div class="col-md-4 col-5">
-                        <button type="submit" class="btn btn-block btn-light"> <i class="fa fa-envelope"></i> Subscribe </button>
-                    </div>
-                    <!-- col.// -->
-                </form>
-                <small class="form-text text-white-50">We'll never share your email address with a third-party. </small>
-            </div>
-            <!-- col-md-6.// -->
-        </div>
-
-
-    </div>
-</section>
-
-<script>
-    $('.main-carousel').owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: true,
-        dots: false,
-        autoplayHoverPause: false,
-        autoplay: 5000,
-        smartSpeed: 700,
-        navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            760: {
-                items: 1,
-                nav: false
-            },
-            1024: {
-                items: 1
-            },
-            1100: {
-                items: 1
-            }
-        }
-    });
-</script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
-
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-
-<script>
-    $(document).ready(function() {
-        $("#testimonial-slider").owlCarousel({
-            items: 3,
-            itemsDesktop: [1000, 3],
-            itemsDesktopSmall: [980, 2],
-            itemsTablet: [768, 2],
-            itemsMobile: [650, 1],
-            pagination: true,
-            navigation: false,
-            slideSpeed: 1000,
-            autoPlay: true
-        });
-    });
-</script>
+	<script>
+		$(document).ready(function () {
+			$("#testimonial-slider").owlCarousel({
+				items: 3,
+				itemsDesktop: [1000, 3],
+				itemsDesktopSmall: [980, 2],
+				itemsTablet: [768, 2],
+				itemsMobile: [650, 1],
+				pagination: true,
+				navigation: false,
+				slideSpeed: 1000,
+				autoPlay: true
+			});
+		});
+	</script>
 
 
 <style>
-    footer {
-        background: rgb(4, 4, 39);
-        color: #fcfcfc;
-        line-height: 1.8;
-        overflow: hidden;
-        margin-bottom: 0;
-        padding: 0;
-    }
-    
-    .grid-g a {
-        color: #fdfdfd;
-        font-size: 13px;
-    }
-    
-    .grid-g h2 {
-        font-size: 25px;
-    }
-    
-    .grid-g ul li {
-        text-decoration: none;
-        list-style: none;
-    }
-    
-    .grid-g h2 {
-        font-family: Calibri;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-    
-    .grid-g {
-        display: grid;
-        display: table-header-group;
-        font-family: Calibri;
-        margin-top: 40px;
-        text-align: left;
-        margin-left: 90px;
-        margin-right: 10px;
-        margin-bottom: 50px;
-    }
-    
-    .padding-left {
-        margin-left: 120px;
-        margin-top: px;
-    }
-    
-    .about-a {
-        line-height: 1.3;
-        margin-left: 20px
-    }
-    
-    .about-a h2 {
-        font-size: 22px;
-        font-weight: 600;
-    }
-    
-    .about-a p {
-        font-size: 14px;
-        line-height: 1.2;
-    }
-    
-    .grid-g button {
-        border: none;
-        color: #fefefe;
-        border-radius: 25px;
-        height: 40px;
-        padding: 7px 4px;
-        width: 85px;
-        font-weight: 100;
-        background: rgba(5, 99, 99, 0.884);
-        cursor: pointer;
-    }
-    
-    .footer-bottom p {
-        height: 40px;
-        margin-top: 70px;
-        text-align: center;
-        color: #ffffff;
-        padding: 8px 15px;
-    }
-    
-    .logo-tab h1 {
-        font-family: Calibri;
-        font-weight: 800;
-        margin-bottom: 10px;
-    }
-    
-    #btn2 {
-        box-sizing: border-box;
-        background: transparent;
-        padding: 12px 16px;
-        color: #fefefe;
-        border: 1px solid rgba(248, 248, 248, 0.288);
-    }
-    
-    #btn2:hover {
-        background: #ffdb58;
-        color: black;
-        text-decoration-line: none;
-    }
-    
-    .padding-left ul li {
-        text-decoration: none;
-        text-decoration-line: cancel-all;
-    }
-    
-    .nav-btm li {
-        text-decoration: none;
-        list-style: none;
-        text-underline-position: auto;
-        color: white;
-    }
-    
-    .nav-btm li a {
-        color: white;
-        font-size: 14px;
-        line-height: 1.2;
-    }
-    
-    .nav-btm h2 {
-        font-size: 22px;
-        font-weight: 600;
-    }
-    
-    footer {
-        display: block
-    }
-    
-    #footer {
-        border-top: none;
-        font: 12px/18px;
-        padding: 0 0 10px;
-        text-align: left
-    }
-    
-    .section-footer ul li {
-        margin-bottom: 5px;
-    }
-    
-    .section-footer ul a {
-        color: inherit;
-    }
-    
-    .section-footer ul a:hover {
-        color: #3167eb;
-    }
-    
-    .section-footer .logo-footer {
-        height: 40px;
-    }
-    
-    .section-footer .title {
-        font-weight: 600;
-        margin-bottom: 16px;
-        color: #fefefe;
-    }
-    
-    .footer-bottom {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    
-    .footer-copyright {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    
-    .logo-tab {
-        margin-left: 150px;
-        margin-top: 15px;
-    }
+footer {
+background: rgb(4, 4, 39);
+color: #fcfcfc;
+line-height: 1.8;
+overflow: hidden;
+margin-bottom:0;
+padding:0;
+} 
+
+.grid-g a {
+color: #fdfdfd;
+font-size: 13px;
+}
+.grid-g h2 {
+font-size: 25px;
+}
+.grid-g ul li{
+text-decoration: none;
+list-style: none;
+}
+.grid-g h2{
+font-family: Calibri;
+font-weight:600;
+margin-bottom: 10px;
+}
+.grid-g {
+display: grid;
+display:table-header-group;
+font-family: Calibri;
+margin-top: 40px;
+text-align: left;
+margin-left: 90px;
+margin-right: 10px;
+margin-bottom: 50px;
+}
+.padding-left{
+margin-left:120px;
+margin-top:px;
+}
+.about-a{
+
+line-height: 1.3;
+margin-left: 20px
+}
+.about-a h2{
+font-size:22px;
+font-weight:600;
+}
+.about-a p{
+font-size: 14px;
+line-height: 1.2;
+}
+
+.grid-g button {
+border: none;
+color: #fefefe;
+border-radius: 25px;
+height: 40px;
+padding: 7px 4px;
+width: 85px;
+font-weight: 100;
+background: rgba(5, 99, 99, 0.884);
+cursor: pointer;
+}
+.footer-bottom p {
+height: 40px;
+margin-top: 70px;
+text-align: center;
+color: #ffffff;
+padding: 8px 15px;
+}
+.logo-tab h1{
+font-family: Calibri;
+font-weight:800;
+margin-bottom:10px;
+
+}
+#btn2{
+box-sizing: border-box;
+background: transparent;
+padding: 12px 16px;
+color: #fefefe;
+border: 1px solid rgba(248, 248, 248, 0.288);
+}
+#btn2:hover{
+background: #ffdb58;
+color:black;
+text-decoration-line: none;
+}
+.padding-left ul li{
+text-decoration: none;
+text-decoration-line: cancel-all;
+}
+.nav-btm li{
+text-decoration: none;
+list-style: none;
+text-underline-position:auto;
+color:white;
+}
+.nav-btm li a{
+color:white;
+font-size: 14px;
+line-height: 1.2;
+}
+.nav-btm h2{
+font-size:22px;
+font-weight:600;
+}
+
+footer {
+display: block
+}
+
+#footer {
+border-top: none;
+font: 12px/18px;
+
+padding: 0 0 10px;
+text-align: left
+}
+
+
+.section-footer ul li {
+margin-bottom: 5px;
+}
+.section-footer ul a {
+color: inherit;
+}
+.section-footer ul a:hover {
+color: #3167eb;
+}
+.section-footer .logo-footer {
+height: 40px;
+}
+.section-footer .title {
+font-weight: 600;
+margin-bottom: 16px;
+color: #fefefe;
+}
+
+.footer-bottom {
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.footer-copyright {
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.logo-tab{
+margin-left:150px;
+margin-top:15px;
+}
+
+
 </style>
 
 
