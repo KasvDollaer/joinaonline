@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.http import JsonResponse
 from django.db.models import Q
 from django.core.files.storage import FileSystemStorage
+from django.views.generic import DetailView, ListView
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.template.defaulttags import register
@@ -33,7 +34,7 @@ from .tasks import order_mail
 def index(request):
 	categories = Category.objects.all()
 	preview_products = Product.objects.all().order_by('-id')[:12]
-	electronics = Product.objects.all()
+	electronics = Category.objects.all()
 	return render(request, Helpers.get_url('index.html'), {'products': preview_products,'categories':categories, 'currency': EcommerceConfig.currency})
 
 def single_product(request, product_id):
@@ -55,6 +56,12 @@ def single_product(request, product_id):
 	# 'images': str(images).replace("'", '"')
 	return render(request, Helpers.get_url('product/single.html'), {'product': product, 'in_cart': in_cart, 'author': author, 'currency': EcommerceConfig.currency})
 	
+
+	def vendors(request):
+		alluser=member.object.all()
+		context={'alluser':alluser}
+		return render(request, Helpers.get_url('vendors/index.html'),context)
+
 def products(request):
 	if request.method == 'POST':
 		pagination_content = ""
@@ -160,6 +167,7 @@ def moneyrefund(request):
 def career(request):
 	return render(request, Helpers.get_url('comingsoon.html'))
 
+
 def shippinginfo(request):
 	return render(request, Helpers.get_url('comingsoon.html'))
 
@@ -256,7 +264,7 @@ def user_account(request):
 			else:
 				user.username = form.cleaned_data['username']
 				user.first_name = form.cleaned_data['first_name']
-				user.last_name = form.cleaned_data['last_name']
+				user.image = request.POST['image']
 				
 				user.member.phone_number = form.cleaned_data['phone_number']
 				user.member.about = form.cleaned_data['about_me']
@@ -565,12 +573,14 @@ def user_register(request):
 					form.cleaned_data['password']
 				)
 				user.first_name = form.cleaned_data['first_name']
-				user.last_name = form.cleaned_data['last_name']
+				
 				
 				member = Member.objects.create(
 					user = user,
 					phone_number = form.cleaned_data['phone_number'],
-					about = ''
+					mimage = request.POST['mimage'] ,
+                  
+                    
 				)
 				
 				member.save()
@@ -697,6 +707,9 @@ def multiply(qty, unit_price, *args, **kwargs):
 def categories_electronics(request):
 	return render(request, Helpers.get_url('categories/electronics.html'))
 
+def categories_food(request):
+	return render(request, Helpers.get_url('categories/food.html'))
+
 
 def categories_mensClothing(request):
 	return render(request, Helpers.get_url('categories/mens-clothing.html'))
@@ -712,6 +725,63 @@ def categories_homeKitchen(request):
 
 def categories_digital(request):
 	return render(request, Helpers.get_url('categories/digital-goods.html'))
+    
+def categories_women(request):
+	return render(request, Helpers.get_url('categories/women.html'))
+    
+
+
+def vendors(request):
+
+    
+    alluser =  Member.objects.all()
+    context= {'alluser': alluser}
+
+    
+    
+    
+    
+        
+   # else:
+    
+    #If not searched, return default posts
+    
+
+        
+    return render(request, Helpers.get_url('vendors/index.html'), context)
+    
+def stockorder(request):
+
+    allimages= Image.objects.all()
+    allproducts= Product.objects.all()
+    
+    context= {'allproducts': allproducts}
+
+        
+    return render(request, Helpers.get_url('vendors/stockorder.html'), context)
+
+        
+#def results_u(request):
+
+    
+    
+    #context= {'alluser': alluser}
+
+    #search_post = request.POST['data[q]']
+    
+    
+    #alluser =  Member.objects.filter(Q(user__contains = search_post)
+        
+   # else:
+    
+    #If not searched, return default posts
+    
+
+    #return HttpResponseRedirect(Helpers.get_path(''vendors/search.html'), context))    
+    #return render(request, Helpers.get_url('vendors/search.html'), context))
+       
+    
+	
 
 #Get category
 def get_category(request, category_slug):
@@ -801,3 +871,29 @@ def admin_order_pdf(request, order_id):
 
 	weasyprint.HTML(string=html).write_pdf(response)
 	return response
+    
+def user_index(request):
+  
+    if request.method == 'POST':
+        form = MemberForm(request.POST, request.FILES)
+  
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = MemberForm()
+        
+    return render(request, Helpers.get_url('user/index.html'), {'form' : form})
+  
+  
+def success(request):
+    return HttpResponse('successfully uploaded')
+    
+
+    
+def search(request):
+    
+    posti = request.POST['data[q]']
+ 
+    members = Member.objects.filter(Q(user__contains = posti)  )
+    return render(request, 'vendors/search.html', {'members': members})

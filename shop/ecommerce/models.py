@@ -5,13 +5,23 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 
 
+# class Member(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     phone_number = models.CharField(max_length=30)
+#     about = models.TextField()
+#     is_customer = models.BooleanField(null=True)
+
+
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    mimage = models.ImageField(upload_to = 'members/' ,blank=True, null=True)
     phone_number = models.CharField(max_length=30)
     about = models.TextField()
-    is_customer = models.BooleanField(null=True)
-
-
+    @property
+    def photo_url(self):
+         if self.mimage and hasattr(self.mimage, 'url'):
+         
+            return self.mimage.url
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     category_slug = models.SlugField(max_length=200, null=True, blank=True)
