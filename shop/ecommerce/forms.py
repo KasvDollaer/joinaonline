@@ -1,11 +1,5 @@
 from django import forms
-
 from .models import *
-
-from .models import Category
-
-from .models import Category, Order
-
 
 class RegisterForm(forms.Form):
 	username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
@@ -50,12 +44,6 @@ class UpdateProductForm(forms.Form):
 	price = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Amount'}))
 	status = forms.CharField(widget=forms.Select(choices=(('1', 'Active'),('0', 'Inactive'),), attrs={'class':'form-control'}))
 	quantity = forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}))
-    
-class MemberForm(forms.ModelForm):
-  
-    class Meta:
-        model = Member
-        fields = ['mimage']
 
 class CheckoutForm(forms.ModelForm):
 	# first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), label='First name')
@@ -77,3 +65,9 @@ class CheckoutForm(forms.ModelForm):
 
 	# quantity = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control'}))
 	# update = forms.BooleanField(required=False, initial=False, widget=forms.HiddenInput)
+    
+class MemberForm(forms.ModelForm):
+  
+    class Meta:
+        model = Member
+        fields = ['mimage']

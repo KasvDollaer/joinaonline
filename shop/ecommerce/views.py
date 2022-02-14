@@ -801,32 +801,6 @@ def get_category(request, category_slug):
 
 
 	return render(request, Helpers.get_url('product/get_category.html'), context)
-    
-def user_index(request):
-  
-    if request.method == 'POST':
-        form = MemberForm(request.POST, request.FILES)
-  
-        if form.is_valid():
-            form.save()
-            return redirect('success')
-    else:
-        form = MemberForm()
-        
-    return render(request, Helpers.get_url('user/index.html'), {'form' : form})
-  
-  
-def success(request):
-    return HttpResponse('successfully uploaded')
-    
-
-    
-def search(request):
-    
-    posti = request.POST['data[q]']
- 
-    members = Member.objects.filter(Q(user__contains = posti)  )
-    return render(request, 'vendors/search.html', {'members': members})
 
 
 
@@ -897,3 +871,29 @@ def admin_order_pdf(request, order_id):
 
 	weasyprint.HTML(string=html).write_pdf(response)
 	return response
+    
+def user_index(request):
+  
+    if request.method == 'POST':
+        form = MemberForm(request.POST, request.FILES)
+  
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = MemberForm()
+        
+    return render(request, Helpers.get_url('user/index.html'), {'form' : form})
+  
+  
+def success(request):
+    return HttpResponse('successfully uploaded')
+    
+
+    
+def search(request):
+    
+    posti = request.POST['data[q]']
+ 
+    members = Member.objects.filter(Q(user__contains = posti)  )
+    return render(request, 'vendors/search.html', {'members': members})
